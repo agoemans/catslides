@@ -1,7 +1,8 @@
 var slideApp = (function () {
     var instance;
-    var stage;
-    var renderer;
+    var app;
+    var slideShowController;
+    var navigatorController;
 
     function init() {
         function load() {
@@ -10,30 +11,38 @@ var slideApp = (function () {
 
         function onLoaded() {
             console.log('onLoaded');
-            stage = new PIXI.Container();
-            var mainContainer = document.getElementById('content');
-            renderer = PIXI.autoDetectRenderer(800, 600, {
-                view: mainContainer,
-                backgroundColor: 0xd7fdde,
-                antialias: true
+            app = new PIXI.Application({
+                width: 800,
+                height: 600,
+                resolution: 1,
+                antialias: true,
+                forceCanvas: true,
+                backgroundColor:0xffffff
             });
 
-            document.body.appendChild(renderer.view);
-            renderer.render(stage);
+            document.body.appendChild(app.view);
 
-            var id = PIXI.loader.resources['assets/data/imageData.json'];
+            createControllers();
+        }
 
-            var slideObj = new Slide();
-            slideObj.create('thisis the text', stage);
-            console.log('stage', stage);
-            console.log('id', id);
+        function createControllers(){
+            slideShowController = new SlideShowController();
+            slideShowController.init(app.stage);
 
+            navigatorController = new NavigatorController();
+            navigatorController.init(app.stage);
+
+            createSlideShow();
+        }
+
+        function createSlideShow(){
+            slideShowController.createSlideShow();
             requestAnimationFrame(animate);
         }
 
         function animate() {
             // render the stage
-            renderer.render(stage);
+            app.renderer.render(app.stage);
             requestAnimationFrame(animate);
 
         }

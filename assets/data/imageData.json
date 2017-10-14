@@ -3,13 +3,14 @@
     {
       "imageName": "cat1",
       "imageUrl": "assets/images/cat1.jpg",
+      "text": "This is the main text",
       "size": {
         "w": 400,
         "h": 400
       },
       "position": {
         "x": 400,
-        "y": 200
+        "y": 400
       },
       "interactive": {
         "clickable": true,
@@ -37,13 +38,14 @@
     {
       "imageName": "cat2",
       "imageUrl": "assets/images/cat2.jpg",
+      "text": "This is the main text",
       "size": {
         "w": 400,
         "h": 400
       },
       "position": {
-        "x": 400,
-        "y": 200
+        "x": 900,
+        "y": 400
       },
       "interactive": {
         "clickable": true,

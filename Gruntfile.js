@@ -24,6 +24,12 @@ module.exports = function(grunt) {
 		            '_build/js/assignment.js': [
                         'js/helpers/loaderHelper.js',
                         'js/app.js',
+                        'js/helpers/navigationHelper.js',
+                        'js/controller/slideShowController.js',
+                        'js/controller/navigatorController.js',
+                        'js/model/slideShowModel.js',
+                        'js/view/slideShowView.js',
+                        'js/view/navigatorView.js',
                         'js/objects/slideImage.js',
                         'js/objects/slideText.js',
                         'js/objects/arrow.js',

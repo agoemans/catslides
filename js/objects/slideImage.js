@@ -1,7 +1,13 @@
-var SlideImage = function(imageUrl){
-    PIXI.Sprite.call(this, PIXI.Texture.fromImage(imageUrl));
+var SlideImage = function(obj){
+    PIXI.Sprite.call(this, PIXI.Texture.fromImage(obj.url));
 
-    this.position.x = 400;
+    this.position.x = obj.x;
+
+    this.anchor.set(0.5, 0);
+
+    this.scale.set(0.7);
+
+    this.visible = obj.visible;
 
 }
 

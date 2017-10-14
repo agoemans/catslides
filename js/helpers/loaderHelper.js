@@ -2,7 +2,6 @@ var loaderHelper = (function(){
     var loadCB;
 
     function loadFonts() {
-        // todo refactor onLoadCallback
         window.WebFontConfig = {
             google: {
                 families: ['Snippet', 'Arvo:700italic', 'Podkova:700']
@@ -27,6 +26,7 @@ var loaderHelper = (function(){
     }
 
     function setLoadCallback(onLoadCallback){
+        //would prefer onComplete or Signal. Used for Pixi.loader's load
         loadCB = onLoadCallback;
     }
 

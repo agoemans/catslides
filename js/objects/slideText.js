@@ -1,12 +1,15 @@
-var SlideText = function(text){
+var SlideText = function(text, stage){
     PIXI.Text.call(this, text, {
         fontFamily: 'Snippet',
         fontSize: 35,
         fill: 'black',
-        align: 'left'
+        align: 'center'
     });
 
-    this.position.set(20);
+    this.x = stage.width / 2;
+    this.y = stage.height - 50;
+
+    this.visible = false;
 
 }
 
