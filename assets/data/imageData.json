@@ -1,0 +1,88 @@
+{
+  "slides": [
+    {
+      "imageName": "cat1",
+      "imageUrl": "assets/images/cat1.jpg",
+      "size": {
+        "w": 400,
+        "h": 400
+      },
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "interactive": {
+        "clickable": true,
+        "numOfLinks": 2,
+        "links": [
+          {
+            "id": 1,
+            "position": {
+              "x": 400,
+              "y": 200
+            },
+            "text": "This is a test"
+          },
+          {
+            "id": 2,
+            "position": {
+              "x": 30,
+              "y": 200
+            },
+            "text": "This is a test too"
+          }
+        ]
+      }
+    },
+    {
+      "imageName": "cat2",
+      "imageUrl": "assets/images/cat2.jpg",
+      "size": {
+        "w": 400,
+        "h": 400
+      },
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "interactive": {
+        "clickable": true,
+        "numOfLinks": 4,
+        "links": [
+          {
+            "id": 1,
+            "position": {
+              "x": 30,
+              "y": 10
+            },
+            "text": "This is a test"
+          },
+          {
+            "id": 2,
+            "position": {
+              "x": 300,
+              "y": 50
+            },
+            "text": "This is a test too"
+          },
+          {
+            "id": 3,
+            "position": {
+              "x": 150,
+              "y": 150
+            },
+            "text": "This is test 3"
+          },
+          {
+            "id": 4,
+            "position": {
+              "x": 500,
+              "y": 450
+            },
+            "text": "This is test 4"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 var loaderHelper = (function(){
-    function loadFonts(onLoadCallback) {
+    var loadCB;
+
+    function loadFonts() {
+        // todo refactor onLoadCallback
         window.WebFontConfig = {
             google: {
                 families: ['Snippet', 'Arvo:700italic', 'Podkova:700']
@@ -7,24 +10,30 @@ var loaderHelper = (function(){
 
             active: function() {
                 // do something
-                loadAssets(onLoadCallback);
+                loadAssets();
             }
         };
     }
 
-    function loadAssets(onLoadCallback) {
+    function loadAssets() {
         PIXI.loader
+            .add('assets/data/imageData.json')
             .add('assets/images/arrow.png')
             .add('assets/images/leftArrow.png')
             .add('assets/images/rightArrow.png')
             .add('assets/images/cat1.jpg')
             .add('assets/images/cat2.jpg')
-            .load(onLoadCallback);
+            .load(loadCB);
+    }
+
+    function setLoadCallback(onLoadCallback){
+        loadCB = onLoadCallback;
     }
 
     return {
         load: function(onLoadCallback){
-            loadFonts(onLoadCallback);
+            setLoadCallback(onLoadCallback);
+            loadFonts();
         }
     }
 })();

@@ -2,18 +2,16 @@ var slideApp = (function () {
     var instance;
     var stage;
     var renderer;
-    var mainContainer;
-    var slideObj;
 
     function init() {
-        function load(){
+        function load() {
             loaderHelper.load(onLoaded);
         }
 
         function onLoaded() {
             console.log('onLoaded');
             stage = new PIXI.Container();
-            mainContainer = document.getElementById('content');
+            var mainContainer = document.getElementById('content');
             renderer = PIXI.autoDetectRenderer(800, 600, {
                 view: mainContainer,
                 backgroundColor: 0xd7fdde,
@@ -23,14 +21,17 @@ var slideApp = (function () {
             document.body.appendChild(renderer.view);
             renderer.render(stage);
 
-            slideObj = new Slide();
+            var id = PIXI.loader.resources['assets/data/imageData.json'];
+
+            var slideObj = new Slide();
             slideObj.create('thisis the text', stage);
             console.log('stage', stage);
+            console.log('id', id);
 
             requestAnimationFrame(animate);
         }
 
-        function animate(){
+        function animate() {
             // render the stage
             renderer.render(stage);
             requestAnimationFrame(animate);
@@ -46,8 +47,8 @@ var slideApp = (function () {
     }
 
     return {
-        getInstance: function(){
-            if(!instance){
+        getInstance: function () {
+            if (!instance) {
                 instance = init();
             }
             return instance;
