@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['js/**/*.js', 'html/*']
+				files: ['js/**/*.js', 'html/*'],
+                tasks: ['clean:build', 'uglify:dev', 'copy',]
 			}
 		},
 		uglify: {
@@ -21,8 +22,12 @@ module.exports = function(grunt) {
 				},
 				files: {
 		            '_build/js/assignment.js': [
-		            	'js/app.js'
-					]
+		            	'js/app.js',
+                        'js/objects/slideImage.js',
+                        'js/objects/slideText.js',
+                        'js/objects/arrow.js',
+                        'js/objects/slide.js'
+                    ]
 				}
 			}
 		},
