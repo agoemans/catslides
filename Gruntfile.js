@@ -22,7 +22,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 		            '_build/js/assignment.js': [
-		            	'js/app.js',
+                        'js/helpers/loaderHelper.js',
+                        'js/app.js',
                         'js/objects/slideImage.js',
                         'js/objects/slideText.js',
                         'js/objects/arrow.js',

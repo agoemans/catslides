@@ -6,27 +6,8 @@ var slideApp = (function () {
     var slideObj;
 
     function init() {
-        function loadAssets() {
-            PIXI.loader
-                .add('assets/images/arrow.png')
-                .add('assets/images/leftArrow.png')
-                .add('assets/images/rightArrow.png')
-                .add('assets/images/cat1.jpg')
-                .add('assets/images/cat2.jpg')
-                .load(onLoaded);
-        }
-
-        function loadWebFonts(){
-            window.WebFontConfig = {
-                google: {
-                    families: ['Snippet', 'Arvo:700italic', 'Podkova:700']
-                },
-
-                active: function() {
-                    // do something
-                    loadAssets();
-                }
-            };
+        function load(){
+            loaderHelper.load(onLoaded);
         }
 
         function onLoaded() {
@@ -41,17 +22,6 @@ var slideApp = (function () {
 
             document.body.appendChild(renderer.view);
             renderer.render(stage);
-
-            // create some white text using the Snippet webfont
-            /*var textSample = new PIXI.Text('Pixi.js can has\n multiline text!', {
-                fontFamily: 'Snippet',
-                fontSize: 35,
-                fill: 'white',
-                align: 'left'
-            });
-            textSample.position.set(20);
-
-            stage.addChild(textSample);*/
 
             slideObj = new Slide();
             slideObj.create('thisis the text', stage);
@@ -69,7 +39,7 @@ var slideApp = (function () {
 
         return {
             start: function () {
-                loadWebFonts();
+                load();
             }
         }
 
