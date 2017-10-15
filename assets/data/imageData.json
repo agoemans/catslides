@@ -3,7 +3,7 @@
     {
       "imageName": "cat1",
       "imageUrl": "assets/images/cat1.jpg",
-      "text": "This is the main text",
+      "text": "This is Chucky",
       "size": {
         "w": 460,
         "h": 460
@@ -17,14 +17,14 @@
               "x": 200,
               "y": 200
             },
-            "text": "This is a test"
+            "text": "He likes the sun"
           },
           {
             "position": {
               "x": 30,
               "y": 100
             },
-            "text": "This is a test too"
+            "text": "He has whiskers"
           }
         ]
       }

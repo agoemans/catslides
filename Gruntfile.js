@@ -31,6 +31,7 @@ module.exports = function(grunt) {
                         'js/backEndObjects/backendLink.js',
                         'js/helpers/backendLinkHelper.js',
                         'js/backEndObjects/backendSlide.js',
+                        'js/helpers/backendSlideHelper.js',
                         'js/model/slideShowModel.js',
                         'js/view/slideShowView.js',
                         'js/view/navigatorView.js',

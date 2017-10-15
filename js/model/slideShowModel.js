@@ -1,81 +1,26 @@
 var SlideShowModel = function(){
     this.app = null;
 
+    this.slideHelper = new BackendSlideHelper();
+
     this.slideShowList = [];
     this.previousSlide = null;
     this.currentSlide = null;
     this.nextSlide = null;
 
-    this.backendLinkHelper = new BackendLinkHelper();
-
-    this.slideData =  PIXI.loader.resources['assets/data/imageData.json'].data;
+    this.slideData = null;
 };
 
 SlideShowModel.prototype.init = function(app){
     this.app = app;
-    this.setSlideList(this.slideData);
-    this.setSlidePositions(0);
-};
 
-SlideShowModel.prototype.setSlideList = function(slideArray){
-    for (var i = 0; i < slideArray.slides.length; i++){
-        var slide = this.createSlide(slideArray.slides[i], i);
-        this.slideShowList.push(slide);
-    }
+    this.slideData = PIXI.loader.resources['assets/data/imageData.json'].data;
+    this.slideShowList = this.slideHelper.getSlides(this.slideData.slides, this.app);
+    this.setSlidePositions(0);
 };
 
 SlideShowModel.prototype.getSlideList = function(){
     return this.slideShowList;
-};
-
-SlideShowModel.prototype.createSlide = function(obj, index){
-    return {
-        id: index,
-        name: obj.imageName,
-        url: obj.imageUrl,
-        x: this.getPositionX(index),
-        y: this.getPositionY(),
-        w: obj.size.w,
-        h: obj.size.h,
-        txtObj: this.getTextObj(obj.text),
-        lNum: obj.numOfLinks,
-        links: this.backendLinkHelper.getLinks(obj),//this.getLinks(obj),
-        visible: false
-    }
-};
-
-SlideShowModel.prototype.getTextObj = function(text){
-    //todo move this to a backend text obj
-    return {
-        x: this.getTxtPositionX(),
-        y: this.getTxtPositionY(),
-        txt: text,
-        size: 35
-    }
-};
-
-SlideShowModel.prototype.getTxtPositionX = function(){
-    //todo for text
-    return this.app.renderer.width / 2;
-};
-
-SlideShowModel.prototype.getTxtPositionY = function(){
-    //todo for text
-    return this.app.renderer.height * 0.85;
-};
-
-SlideShowModel.prototype.getPositionX = function(index){
-    //todo for slides
-    if (index == 0){
-        return this.app.renderer.width / 2;
-    } else {
-        return this.app.renderer.width;
-    }
-};
-
-SlideShowModel.prototype.getPositionY = function(){
-    //todo for slides
-    return this.app.renderer.height * 0.35;
 };
 
 SlideShowModel.prototype.setSlidePositions = function(currentIndex){
