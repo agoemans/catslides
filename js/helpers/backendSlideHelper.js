@@ -1,4 +1,6 @@
 var BackendSlideHelper = function(){
+    var slides = [];
+    var lastIndex = 0;
     function create(slideArray, app){
         var slideList = [];
         for (var i = 0; i < slideArray.length; i++){
@@ -8,16 +10,39 @@ var BackendSlideHelper = function(){
         return slideList;
     }
 
-    function updateSlidePosition(){
+    function getPreviousSlide(index){
+        lastIndex = slides.length - 1;
+        if(index === 0) {
+            return slides[lastIndex];
+        } else {
+            return slides[index - 1];
+        }
+    }
 
+    function getNextSlide(index){
+        lastIndex = slides.length - 1;
+        if(index === lastIndex) {
+            return slides[0];
+        } else {
+            return slides[index + 1];
+        }
     }
 
     return {
-        getSlides: function(slideArray, app){
-            return create(slideArray, app);
+        setSlides: function(slideArray, app){
+            slides = create(slideArray, app);
         },
-        setPosition: function(index){
-            updateSlidePosition(index)
+        getSlides: function(){
+            return slides;
+        },
+        getCurrent: function(index){
+            return slides[index];
+        },
+        getPrevious: function(index){
+            getPreviousSlide(index);
+        },
+        getNext: function(index){
+            getNextSlide(index);
         }
     }
 };

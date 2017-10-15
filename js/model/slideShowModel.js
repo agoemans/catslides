@@ -15,34 +15,24 @@ SlideShowModel.prototype.init = function(app){
     this.app = app;
 
     this.slideData = PIXI.loader.resources['assets/data/imageData.json'].data;
-    this.slideShowList = this.slideHelper.getSlides(this.slideData.slides, this.app);
-    this.setSlidePositions(0);
+    this.slideHelper.setSlides(this.slideData.slides, this.app);
+    this.setNavigatorPositions(0);
 };
 
 SlideShowModel.prototype.getSlideList = function(){
-    return this.slideShowList;
+    return this.slideHelper.getSlides();
 };
 
-SlideShowModel.prototype.setSlidePositions = function(currentIndex){
+SlideShowModel.prototype.setNavigatorPositions = function(index){
     //todo refactor, when reachig end or at start, reset
-    var lastIndex = this.slideShowList.length - 1;
+    this.currentSlide = this.slideHelper.getCurrentSlide(index);
 
-    this.currentSlide = this.slideShowList[currentIndex];
+    this.previousSlide = this.slideHelper.getPrevious(index);
 
-    if(currentIndex === 0) {
-        this.previousSlide = this.slideShowList[lastIndex];
-    } else {
-        this.previousSlide = this.slideShowList[currentIndex - 1];
-    }
-
-    if(currentIndex === lastIndex) {
-        this.nextSlide = this.slideShowList[0];
-    } else {
-        this.previousSlide = this.slideShowList[currentIndex + 1];
-    }
+    this.nextSlide = this.slideHelper.getNext(index);
 };
 
-SlideShowModel.prototype.updateSlidePosition = function(){
+SlideShowModel.prototype.updateSlides = function(){
 
 };
 
