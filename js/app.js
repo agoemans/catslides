@@ -23,6 +23,8 @@ var slideApp = (function () {
 
             document.body.appendChild(app.view);
 
+            console.log('app', app);
+
             createControllers();
             setupNotifier();
             createSlideShow();
@@ -31,10 +33,10 @@ var slideApp = (function () {
 
         function createControllers(){
             slideShowController = new SlideShowController();
-            slideShowController.init(app.stage);
+            slideShowController.init(app);
 
             navigatorController = new NavigatorController();
-            navigatorController.init(app.stage);
+            navigatorController.init(app);
         }
 
         function setupNotifier(){

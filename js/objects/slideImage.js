@@ -2,8 +2,9 @@ var SlideImage = function(obj){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage(obj.url));
 
     this.position.x = obj.x;
+    this.position.y = obj.y;
 
-    this.anchor.set(0.5, 0);
+    this.anchor.set(0.5, 1);
 
     this.scale.set(0.7);
 

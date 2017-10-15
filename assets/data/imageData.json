@@ -8,10 +8,6 @@
         "w": 400,
         "h": 400
       },
-      "position": {
-        "x": 400,
-        "y": 400
-      },
       "interactive": {
         "clickable": true,
         "numOfLinks": 2,
@@ -42,10 +38,6 @@
       "size": {
         "w": 400,
         "h": 400
-      },
-      "position": {
-        "x": 900,
-        "y": 400
       },
       "interactive": {
         "clickable": true,

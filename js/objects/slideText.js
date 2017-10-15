@@ -1,13 +1,15 @@
-var SlideText = function(text, stage){
-    PIXI.Text.call(this, text, {
+var SlideText = function(txtObj){
+    PIXI.Text.call(this, txtObj.txt, {
         fontFamily: 'Snippet',
         fontSize: 35,
         fill: 'black',
         align: 'center'
     });
 
-    this.x = 400;
-    this.y = 600;
+    this.x = txtObj.x;
+    this.y = txtObj.y;
+
+    this.anchor.set(0.5, 0.5);
 
     this.visible = false;
 

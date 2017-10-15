@@ -3,16 +3,16 @@ var NavigatorController = function(){
 
     this.name = 'navigatorController';
 
-    this.stage = null;
+    this.app = null;
 
     this.notifyHelper = null;
 };
 
-NavigatorController.prototype.init = function(stage){
-    this.stage = stage;
+NavigatorController.prototype.init = function(app){
+    this.app = app;
 
     this.navigatorView = new NavigatorView();
-    this.navigatorView.init(this.stage);
+    this.navigatorView.init(this.app);
 };
 
 NavigatorController.prototype.onClick = function(){

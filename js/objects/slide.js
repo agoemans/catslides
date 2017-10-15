@@ -1,5 +1,5 @@
 var Slide = function(obj, stage){
-  this.slideText = new SlideText(obj.text, stage);
+  this.slideText = new SlideText(obj.txtObj, stage);
   this.slideImage = new SlideImage(obj);
 };
 

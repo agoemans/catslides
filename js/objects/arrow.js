@@ -1,9 +1,16 @@
-var Arrow = function(x, imageUrl){
+var Arrow = function(imageUrl, app, isLeft){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage(imageUrl));
 
-    this.position.x = x;
-    this.position.y = 400;
-    this.scale.set(0.5);
+    if(isLeft){
+        this.position.x = app.renderer.width * 0.2;
+    } else {
+        this.position.x = app.renderer.width * 0.8;
+    }
+
+    this.position.y = app.renderer.height - 100;
+
+    this.anchor.set(0.5, 0.5);
+    this.scale.set(0.3);
 
 }
 

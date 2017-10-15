@@ -4,24 +4,25 @@ var NavigatorView = function(){
 
     this.name = 'navigatorView';
 
-    this.stage = null;
+    this.app = null;
 
     this.notifyHelper = null;
 };
 
-NavigatorView.prototype.init = function(stage){
-    this.stage = stage;
+NavigatorView.prototype.init = function(app){
+    this.app = app;
 
-    this.leftArrow = new Arrow(200, 'assets/images/leftArrow.png');
-    this.rightArrow = new Arrow(400, 'assets/images/rightArrow.png');
+    this.leftArrow = new Arrow('assets/images/leftArrow.png', app, true);
+    this.rightArrow = new Arrow('assets/images/rightArrow.png', app, false);
 
-    this.stage.addChild(this.leftArrow);
-    this.stage.addChild(this.rightArrow);
+    this.app.stage.addChild(this.leftArrow);
+    this.app.stage.addChild(this.rightArrow);
 
     this.setupListeners();
 };
 
 NavigatorView.prototype.setupListeners = function(){
+    //todo move listners to Arrow
     this.leftArrow.buttonMode = true;
     this.leftArrow.interactive = true;
 

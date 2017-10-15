@@ -1,4 +1,6 @@
 var SlideShowModel = function(){
+    this.app = null;
+
     this.slideShowList = [];
     this.previousSlide = null;
     this.currentSlide = null;
@@ -7,16 +9,15 @@ var SlideShowModel = function(){
     this.slideData =  PIXI.loader.resources['assets/data/imageData.json'].data;
 };
 
-SlideShowModel.prototype.init = function(){
+SlideShowModel.prototype.init = function(app){
+    this.app = app;
     this.setSlideList(this.slideData);
     this.setSlidePositions(0);
 };
 
 SlideShowModel.prototype.setSlideList = function(slideArray){
-    //todo pass in parameter
-    // this.slideData = PIXI.loader.resources['assets/data/imageData.json'];
     for (var i = 0; i < slideArray.slides.length; i++){
-        var slide = this.createSlide(slideArray.slides[i]);
+        var slide = this.createSlide(slideArray.slides[i], i);
         this.slideShowList.push(slide);
     }
 };
@@ -30,15 +31,48 @@ SlideShowModel.prototype.createSlide = function(obj, index){
         id: index,
         name: obj.imageName,
         url: obj.imageUrl,
-        x: obj.position.x,
-        y: obj.position.y,
+        x: this.getPositionX(index),
+        y: this.getPositionY(),
         w: obj.size.w,
         h: obj.size.h,
-        txt: obj.text,
+        txtObj: this.getTextObj(obj.text),
         lNum: obj.numOfLinks,
         links: this.getLinks(obj),
         visible: false
     }
+};
+
+SlideShowModel.prototype.getTextObj = function(text){
+    //todo move this to a backend text obj
+    return {
+        x: this.getTxtPositionX(),
+        y: this.getTxtPositionY(),
+        txt: text,
+    }
+};
+
+SlideShowModel.prototype.getTxtPositionX = function(){
+    //todo for text
+    return this.app.renderer.width / 2;
+};
+
+SlideShowModel.prototype.getTxtPositionY = function(){
+    //todo for text
+    return this.app.renderer.height - 100;
+};
+
+SlideShowModel.prototype.getPositionX = function(index){
+    //todo for slides
+    if (index == 0){
+        return this.app.renderer.width / 2;
+    } else {
+        return this.app.renderer.width;
+    }
+};
+
+SlideShowModel.prototype.getPositionY = function(){
+    //todo for slides
+    return this.app.renderer.height / 2;
 };
 
 SlideShowModel.prototype.getLinks = function(obj){
@@ -64,6 +98,7 @@ SlideShowModel.prototype.createLinks = function(linkArray){
 };
 
 SlideShowModel.prototype.setSlidePositions = function(currentIndex){
+    //todo refactor, when reachig end or at start, reset
     var lastIndex = this.slideShowList.length - 1;
 
     this.currentSlide = this.slideShowList[currentIndex];

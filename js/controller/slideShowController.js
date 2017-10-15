@@ -4,20 +4,20 @@ var SlideShowController = function(){
 
     this.name = 'slideShowController';
 
-    this.stage = null;
+    this.app = null;
 
     this.notifyHelper = null;
 
     this.currentSlide = null;
 };
 
-SlideShowController.prototype.init = function(stage){
-    this.stage = stage;
+SlideShowController.prototype.init = function(app){
+    this.app = app;
 
     this.slideModel = new SlideShowModel();
-    this.slideModel.init();
+    this.slideModel.init(app);
 
-    this.slideView = new SlideShowView(this.stage);
+    this.slideView = new SlideShowView(this.app.stage);
 
     console.log('ctonroller SlideShowController');
 };
