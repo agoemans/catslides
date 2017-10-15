@@ -3,12 +3,17 @@ var SlideShowView = function(stage){
 
     this.slides = [];
 
+    this.name = 'slideShowView';
+
+    this.notifyHelper = null;
+
     this.slide = null;
+
+    this.currentSlide = null;
 };
 
 SlideShowView.prototype.createSlideShow = function(slideArray){
     this.setSlides(slideArray);
-    this.toggleVisibility(0, true);
 };
 
 SlideShowView.prototype.setSlides = function(slideArray){
@@ -33,3 +38,6 @@ SlideShowView.prototype.toggleVisibility = function(index, value){
     this.slides[index].toggleVisibility(value);
 };
 
+SlideShowView.prototype.setCurrentSlide = function(slide){
+    this.currentSlide = this.slides[slide.id];
+};

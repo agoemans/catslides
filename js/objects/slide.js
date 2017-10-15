@@ -8,6 +8,11 @@ Slide.prototype.toggleVisibility = function(value){
   this.slideImage.visible = value;
 };
 
-Slide.prototype.adjustPosition = function(){
+Slide.prototype.updatePosition = function(x, y){
 
+};
+
+Slide.prototype.update = function(stage){
+  this.slideImage.updatePosition(400, 400);
+  this.slideText.updatePosition(400, 600);
 };

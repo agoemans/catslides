@@ -8,14 +8,15 @@ var SlideShowModel = function(){
 };
 
 SlideShowModel.prototype.init = function(){
-    this.setSlideList();
+    this.setSlideList(this.slideData);
     this.setSlidePositions(0);
 };
 
-SlideShowModel.prototype.setSlideList = function(){
+SlideShowModel.prototype.setSlideList = function(slideArray){
+    //todo pass in parameter
     // this.slideData = PIXI.loader.resources['assets/data/imageData.json'];
-    for (var i = 0; i < this.slideData.slides.length; i++){
-        var slide = this.createSlide(this.slideData.slides[i]);
+    for (var i = 0; i < slideArray.slides.length; i++){
+        var slide = this.createSlide(slideArray.slides[i]);
         this.slideShowList.push(slide);
     }
 };
@@ -79,3 +80,12 @@ SlideShowModel.prototype.setSlidePositions = function(currentIndex){
         this.previousSlide = this.slideShowList[currentIndex + 1];
     }
 };
+
+SlideShowModel.prototype.updateSlidePosition = function(){
+
+};
+
+SlideShowModel.prototype.getCurrentSlide = function(){
+    return this.currentSlide;
+};
+

@@ -6,8 +6,8 @@ var SlideText = function(text, stage){
         align: 'center'
     });
 
-    this.x = stage.width / 2;
-    this.y = stage.height - 50;
+    this.x = 400;
+    this.y = 600;
 
     this.visible = false;
 

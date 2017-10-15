@@ -3,6 +3,7 @@ var slideApp = (function () {
     var app;
     var slideShowController;
     var navigatorController;
+    var notifier;
 
     function init() {
         function load() {
@@ -23,6 +24,9 @@ var slideApp = (function () {
             document.body.appendChild(app.view);
 
             createControllers();
+            setupNotifier();
+            createSlideShow();
+            requestAnimationFrame(animate);
         }
 
         function createControllers(){
@@ -31,13 +35,18 @@ var slideApp = (function () {
 
             navigatorController = new NavigatorController();
             navigatorController.init(app.stage);
+        }
 
-            createSlideShow();
+        function setupNotifier(){
+            notifier = new NotifyHelper();
+            notifier.register(slideShowController);
+            notifier.register(slideShowController.slideView);
+            notifier.register(navigatorController);
+            notifier.register(navigatorController.navigatorView);
         }
 
         function createSlideShow(){
             slideShowController.createSlideShow();
-            requestAnimationFrame(animate);
         }
 
         function animate() {
