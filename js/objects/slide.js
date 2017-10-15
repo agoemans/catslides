@@ -13,6 +13,6 @@ Slide.prototype.updatePosition = function(x, y){
 };
 
 Slide.prototype.update = function(stage){
-  this.slideImage.updatePosition(400, 400);
-  this.slideText.updatePosition(400, 600);
+  // this.slideImage.updatePosition(400, 400);
+  // this.slideText.updatePosition(400, 600);
 };

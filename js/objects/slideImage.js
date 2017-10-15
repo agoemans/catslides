@@ -4,7 +4,9 @@ var SlideImage = function(obj){
     this.position.x = obj.x;
     this.position.y = obj.y;
 
-    this.anchor.set(0.5, 1);
+    console.log('this.position.y', this.position.y);
+
+    this.anchor.set(0.5, 0.5);
 
     this.scale.set(0.7);
 

@@ -58,7 +58,7 @@ SlideShowModel.prototype.getTxtPositionX = function(){
 
 SlideShowModel.prototype.getTxtPositionY = function(){
     //todo for text
-    return this.app.renderer.height - 100;
+    return this.app.renderer.height * 0.85;
 };
 
 SlideShowModel.prototype.getPositionX = function(index){
@@ -72,7 +72,7 @@ SlideShowModel.prototype.getPositionX = function(index){
 
 SlideShowModel.prototype.getPositionY = function(){
     //todo for slides
-    return this.app.renderer.height / 2;
+    return this.app.renderer.height * 0.35;
 };
 
 SlideShowModel.prototype.getLinks = function(obj){
