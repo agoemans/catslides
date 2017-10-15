@@ -42,7 +42,7 @@ var slideApp = (function () {
         function setupNotifier(){
             notifier = new NotifyHelper();
             notifier.register(slideShowController);
-            notifier.register(slideShowController.slideView);
+            notifier.register(slideShowController.slideShowView);
             notifier.register(navigatorController);
             notifier.register(navigatorController.navigatorView);
         }

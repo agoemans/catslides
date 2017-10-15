@@ -24,6 +24,7 @@ module.exports = function(grunt) {
 		            '_build/js/assignment.js': [
                         'js/helpers/loaderHelper.js',
                         'js/app.js',
+                        'js/helpers/slideCreator.js',
                         'js/helpers/notifyHelper.js',
                         'js/helpers/interactiveboxHelper.js',
                         'js/controller/slideShowController.js',
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
                         'js/guiObjects/slideImage.js',
                         'js/guiObjects/slideText.js',
                         'js/guiObjects/arrow.js',
-                        'js/guiObjects/slide.js'
+                        'js/guiObjects/slideView.js'
                     ]
 				}
 			}
@@ -54,6 +55,7 @@ module.exports = function(grunt) {
 					{expand: true, flatten: true, src: ['assets/css/**'], dest: '_build/assets/css/'},
 					{expand: true, flatten: true, src: ['assets/data/**'], dest: '_build/assets/data/'},
 					{expand: true, flatten: true, src: ['node_modules/pixi.js/dist/pixi.min.js'], dest: '_build/js'},
+					{expand: true, flatten: true, src: ['node_modules/gsap/src/minified/TweenMax.min.js'], dest: '_build/js'},
                     {expand: true, flatten: true, src: ['html/index.html'], dest: '_build'}
 				]
 			}

@@ -7,14 +7,19 @@ var RoundedBox = function(obj, parent, tint){
     this.position.x = offsetX;
     this.position.y = offsetY;
 
+    this.name = 'roundedBox';
+
     this.tint = tint;
 
     this.scale.set(0.5);
 
     this.text = obj.text;
 
-    this.clicked = false;
+    this.notifyHelper = null;
+
     this.visible = false;
+
+    this.setupClickListeners();
 
 };
 
@@ -22,13 +27,14 @@ RoundedBox.prototype = Object.create(PIXI.Sprite.prototype);
 
 RoundedBox.prototype.constructor = RoundedBox;
 
-RoundedBox.prototype.setupClickListeners = function(onClickCallback, onClickContext){
-    console.log('RoundedBox setupClick listners');
+RoundedBox.prototype.setupClickListeners = function(){
     this.buttonMode = true;
     this.interactive = true;
 
+    var that = this;
     this.on('pointerdown', function(){
-        onClickCallback.call(onClickContext, this);
+        that.notifyHelper.sendClickEvent('popUpBox', that);
+        // onClickCallback.call(onClickContext, this);
     })
         // .on('pointerup', onButtonUp)
         // .on('pointerupoutside', onButtonUp)
@@ -36,4 +42,10 @@ RoundedBox.prototype.setupClickListeners = function(onClickCallback, onClickCont
         .on('pointerout', function(){
             console.log('out');
         });
+};
+
+RoundedBox.prototype.updateBoxPosition = function(offsetX, parent){
+    var newOffsetX = parent.x - (parent.width * parent.anchor.x) + offsetX;
+
+    this.position.x = newOffsetX;
 };

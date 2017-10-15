@@ -18,3 +18,13 @@ var SlideText = function(txtObj){
 SlideText.prototype = Object.create(PIXI.Text.prototype);
 
 SlideText.prototype.constructor = SlideText;
+
+SlideText.prototype.hide = function(offsetX){
+    this.position.x = offsetX;
+    this.visible = false;
+};
+
+SlideText.prototype.show = function(x){
+    this.position.x = x;
+    this.visible = true;
+};

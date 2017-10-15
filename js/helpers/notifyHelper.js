@@ -9,12 +9,12 @@ var NotifyHelper = function(){
             var handler = handlers[receiver];
             receiver.onClick();
         },
-        sendClickEvent: function(receiver){
+        sendClickEvent: function(receiver, mssg){
             console.log('navigator helper send click events');
             for (key in handlers) {
                 if (handlers[key].name === receiver) {
                     var handler = handlers[key];
-                    handler.onClick();
+                    handler.onClick(mssg);
                 }
             }
         }

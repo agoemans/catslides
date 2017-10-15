@@ -71,6 +71,71 @@
           }
         ]
       }
+    },
+    {
+      "imageName": "cat3",
+      "imageUrl": "assets/images/cat3.jpg",
+      "text": "This is Chucky again",
+      "size": {
+        "w": 460,
+        "h": 460
+      },
+      "interactive": {
+        "clickable": true,
+        "numOfLinks": 2,
+        "links": [
+          {
+            "position": {
+              "x": 20,
+              "y": 180
+            },
+            "text": "He likes food"
+          },
+          {
+            "position": {
+              "x": 280,
+              "y": 300
+            },
+            "text": "He likes the sun"
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 40
+            },
+            "text": "He has whiskers"
+          }
+        ]
+      }
+    },
+    {
+      "imageName": "cat4",
+      "imageUrl": "assets/images/cat4.jpg",
+      "text": "This is Chucky's friend",
+      "size": {
+        "w": 460,
+        "h": 460
+      },
+      "interactive": {
+        "clickable": true,
+        "numOfLinks": 2,
+        "links": [
+          {
+            "position": {
+              "x": 320,
+              "y": 70
+            },
+            "text": "He likes the sun"
+          },
+          {
+            "position": {
+              "x": 130,
+              "y": 350
+            },
+            "text": "He has whiskers"
+          }
+        ]
+      }
     }
   ]
 }

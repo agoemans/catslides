@@ -1,8 +1,8 @@
-var SlideImage = function(obj){
-    PIXI.Sprite.call(this, PIXI.Texture.fromImage(obj.url));
+var SlideImage = function(x, y, imageUrl){
+    PIXI.Sprite.call(this, PIXI.Texture.fromImage(imageUrl));
 
-    this.position.x = obj.x;
-    this.position.y = obj.y;
+    this.position.x = x;
+    this.position.y = y;
 
     console.log('this.position.y', this.position.y);
 
@@ -10,10 +10,20 @@ var SlideImage = function(obj){
 
     this.scale.set(0.7);
 
-    this.visible = obj.visible;
+    this.visible = false;
 
 }
 
 SlideImage.prototype = Object.create(PIXI.Sprite.prototype);
 
 SlideImage.prototype.constructor = SlideImage;
+
+SlideImage.prototype.hide = function(offsetX){
+    this.position.x = offsetX;
+    this.visible = false;
+};
+
+SlideImage.prototype.show = function(x){
+    this.position.x = x;
+    this.visible = true;
+};
