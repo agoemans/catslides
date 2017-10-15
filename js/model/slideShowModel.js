@@ -50,6 +50,7 @@ SlideShowModel.prototype.getTextObj = function(text){
         x: this.getTxtPositionX(),
         y: this.getTxtPositionY(),
         txt: text,
+        size: 35
     }
 };
 

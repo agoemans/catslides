@@ -5,15 +5,14 @@
       "imageUrl": "assets/images/cat1.jpg",
       "text": "This is the main text",
       "size": {
-        "w": 400,
-        "h": 400
+        "w": 460,
+        "h": 460
       },
       "interactive": {
         "clickable": true,
         "numOfLinks": 2,
         "links": [
           {
-            "id": 1,
             "position": {
               "x": 200,
               "y": 200
@@ -21,10 +20,9 @@
             "text": "This is a test"
           },
           {
-            "id": 2,
             "position": {
               "x": 30,
-              "y": 200
+              "y": 100
             },
             "text": "This is a test too"
           }
@@ -36,15 +34,14 @@
       "imageUrl": "assets/images/cat2.jpg",
       "text": "This is the main text",
       "size": {
-        "w": 400,
-        "h": 400
+        "w": 460,
+        "h": 460
       },
       "interactive": {
         "clickable": true,
         "numOfLinks": 4,
         "links": [
           {
-            "id": 1,
             "position": {
               "x": 30,
               "y": 10
@@ -52,7 +49,6 @@
             "text": "This is a test"
           },
           {
-            "id": 2,
             "position": {
               "x": 300,
               "y": 50
@@ -60,7 +56,6 @@
             "text": "This is a test too"
           },
           {
-            "id": 3,
             "position": {
               "x": 150,
               "y": 150
@@ -68,7 +63,6 @@
             "text": "This is test 3"
           },
           {
-            "id": 4,
             "position": {
               "x": 500,
               "y": 450

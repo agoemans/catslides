@@ -1,7 +1,7 @@
 var SlideText = function(txtObj){
     PIXI.Text.call(this, txtObj.txt, {
         fontFamily: 'Snippet',
-        fontSize: 35,
+        fontSize: txtObj.size,
         fill: 'black',
         align: 'center'
     });

@@ -30,10 +30,12 @@ SlideShowView.prototype.createSlide = function(slideObj){
 
     this.app.stage.addChild(this.slide.slideText);
     this.app.stage.addChild(this.slide.slideImage);
+    this.app.stage.addChild(this.slide.popUpBox.popUpImage);
+    this.app.stage.addChild(this.slide.popUpBox.popUpText);
 
-    for(var i =0; i < this.slide.interactiveBoxes.length; i++){
+    for(var i = 0; i < this.slide.interactiveBoxes.length; i++){
         this.app.stage.addChild(this.slide.interactiveBoxes[i]);
-    }
+    };
 
     return this.slide;
 };
