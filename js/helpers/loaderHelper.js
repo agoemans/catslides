@@ -1,4 +1,4 @@
-var loaderHelper = (function(){
+var LoaderHelper = (function(){
     var loadCB;
 
     function loadFonts() {
@@ -22,6 +22,7 @@ var loaderHelper = (function(){
             .add('assets/images/rightArrow.png')
             .add('assets/images/cat1.jpg')
             .add('assets/images/cat2.jpg')
+            .add('assets/images/box.png')
             .load(loadCB);
     }
 

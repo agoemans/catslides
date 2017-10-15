@@ -17,7 +17,7 @@ SlideShowController.prototype.init = function(app){
     this.slideModel = new SlideShowModel();
     this.slideModel.init(app);
 
-    this.slideView = new SlideShowView(this.app.stage);
+    this.slideView = new SlideShowView(this.app);
 
     console.log('ctonroller SlideShowController');
 };

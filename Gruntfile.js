@@ -25,15 +25,20 @@ module.exports = function(grunt) {
                         'js/helpers/loaderHelper.js',
                         'js/app.js',
                         'js/helpers/notifyHelper.js',
+                        'js/helpers/interactiveboxHelper.js',
                         'js/controller/slideShowController.js',
                         'js/controller/navigatorController.js',
+                        'js/backEndObjects/backendLink.js',
+                        'js/helpers/backendLinkHelper.js',
+                        'js/backEndObjects/backendSlide.js',
                         'js/model/slideShowModel.js',
                         'js/view/slideShowView.js',
                         'js/view/navigatorView.js',
-                        'js/objects/slideImage.js',
-                        'js/objects/slideText.js',
-                        'js/objects/arrow.js',
-                        'js/objects/slide.js'
+                        'js/guiObjects/roundedBox.js',
+                        'js/guiObjects/slideImage.js',
+                        'js/guiObjects/slideText.js',
+                        'js/guiObjects/arrow.js',
+                        'js/guiObjects/slide.js'
                     ]
 				}
 			}

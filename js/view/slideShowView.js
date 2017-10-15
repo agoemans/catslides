@@ -1,5 +1,5 @@
-var SlideShowView = function(stage){
-    this.stage = stage;
+var SlideShowView = function(app){
+    this.app = app;
 
     this.slides = [];
 
@@ -22,14 +22,18 @@ SlideShowView.prototype.setSlides = function(slideArray){
         this.slides.push(slide);
     }
 
-    console.log('view createSlideShow', this.slides);
+    console.log('view createSlideShow', this.slides, this.app);
 };
 
 SlideShowView.prototype.createSlide = function(slideObj){
-    this.slide = new Slide(slideObj, this.stage);
+    this.slide = new Slide(slideObj);
 
-    this.stage.addChild(this.slide.slideText);
-    this.stage.addChild(this.slide.slideImage);
+    this.app.stage.addChild(this.slide.slideText);
+    this.app.stage.addChild(this.slide.slideImage);
+
+    for(var i =0; i < this.slide.interactiveBoxes.length; i++){
+        this.app.stage.addChild(this.slide.interactiveBoxes[i]);
+    }
 
     return this.slide;
 };

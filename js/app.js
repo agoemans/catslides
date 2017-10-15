@@ -7,7 +7,7 @@ var slideApp = (function () {
 
     function init() {
         function load() {
-            loaderHelper.load(onLoaded);
+            LoaderHelper.load(onLoaded);
         }
 
         function onLoaded() {
@@ -18,7 +18,7 @@ var slideApp = (function () {
                 resolution: 1,
                 antialias: true,
                 forceCanvas: true,
-                backgroundColor:0xffffff
+                backgroundColor:0x6dd46f
             });
 
             document.body.appendChild(app.view);

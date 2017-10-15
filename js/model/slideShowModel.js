@@ -6,6 +6,8 @@ var SlideShowModel = function(){
     this.currentSlide = null;
     this.nextSlide = null;
 
+    this.backendLinkHelper = new BackendLinkHelper();
+
     this.slideData =  PIXI.loader.resources['assets/data/imageData.json'].data;
 };
 
@@ -37,7 +39,7 @@ SlideShowModel.prototype.createSlide = function(obj, index){
         h: obj.size.h,
         txtObj: this.getTextObj(obj.text),
         lNum: obj.numOfLinks,
-        links: this.getLinks(obj),
+        links: this.backendLinkHelper.getLinks(obj),//this.getLinks(obj),
         visible: false
     }
 };
@@ -73,28 +75,6 @@ SlideShowModel.prototype.getPositionX = function(index){
 SlideShowModel.prototype.getPositionY = function(){
     //todo for slides
     return this.app.renderer.height * 0.35;
-};
-
-SlideShowModel.prototype.getLinks = function(obj){
-    if(obj.interactive.clickable){
-        return null;
-    } else {
-        return this.createLinks(obj.interactive.links)
-    }
-};
-
-SlideShowModel.prototype.createLinks = function(linkArray){
-    var linkList = [];
-    for (var i = 0; i < linkArray.length; i++){
-        linkList.push({
-            id : linkArray[i].id,
-            x: linkArray[i].position.x,
-            y: linkArray[i].position.y,
-            txt: linkArray[i].text,
-        });
-    }
-
-    return linkList;
 };
 
 SlideShowModel.prototype.setSlidePositions = function(currentIndex){

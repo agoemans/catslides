@@ -1,6 +1,12 @@
-var Slide = function(obj, stage){
-  this.slideText = new SlideText(obj.txtObj, stage);
+var Slide = function(obj){
+  this.id = obj.id;
+  this.slideText = new SlideText(obj.txtObj);
   this.slideImage = new SlideImage(obj);
+
+  this.interactiveBoxHelper = new InteractiveBoxHelper();
+  this.interactiveBoxes = this.interactiveBoxHelper.getBoxes(obj);
+
+  console.log('this.interactiveBoxes', this.interactiveBoxes);
 };
 
 Slide.prototype.toggleVisibility = function(value){
