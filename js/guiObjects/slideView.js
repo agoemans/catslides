@@ -59,7 +59,11 @@ SlideView.prototype.slideOut = function(offsetX, dir, defaultX){
     this.slideImage.slideOut(offsetX, dir, defaultX);
 };
 
-SlideView.prototype.slideIn = function(offsetX, defaultX){
+SlideView.prototype.slideIn = function(){
     console.log('------------> slide id', this.id);
     this.slideImage.slideIn();
+};
+
+SlideView.prototype.updatePosition = function(x){
+    this.slideImage.updatePosition(x);
 };

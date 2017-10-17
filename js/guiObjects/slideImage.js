@@ -28,16 +28,11 @@ SlideImage.prototype.show = function(x){
     this.alpha = 1;
 };
 
-SlideImage.prototype.slideOut = function(offsetX, dir, defaultX){
-    console.log('image Slide Out', offsetX, this.position.x, 'defaultX', defaultX);
-    var that = this;
+SlideImage.prototype.slideOut = function(offsetX){
+    console.log('image Slide Out', offsetX, this.position.x);
 
     TweenMax.to(this, 0.25, {
-        x: offsetX, alpha: 0, ease: Quad.easeOut,
-        onComplete: function(){
-            that.position.x = defaultX;
-            console.log('tween on complete', that.position.x);
-        }
+        x: offsetX, alpha: 0, ease: Quad.easeOut
     })
 };
 
@@ -46,4 +41,9 @@ SlideImage.prototype.slideIn = function(){
     TweenMax.to(this, 0.35, {
         x: 400, alpha: 1, visible: true, ease: Quad.easeOut
     })
+};
+
+
+SlideImage.prototype.updatePosition = function(x){
+    this.position.x = x;
 };

@@ -65,16 +65,17 @@ SlideShowController.prototype.onClick = function(data){
     var nextSlide = this.slides[nextSlideIndex];
     this.setCurrentSlide(nextSlideIndex);
 
-    var offsetX = (data == 'left' ? 100 : 500);
-    var defaultX = (data == 'left' ? 800 : 100);
+    var offsetX = (data == 'left' ? 100 : 800);
+    var startPositionX = (data == 'left' ? 800 : 100);
 
     console.log('==============================================================');
     console.log('offsetX: ' +  offsetX, 'previousSlide.id: ' + previousSlide.id);
     console.log('nextSlide.id: ' + nextSlide.id, 'lastId: '+ lastId, 'nextSlideIndex: ' + nextSlideIndex);
     this.slideShowView.setCurrentSlide(nextSlide);
+    this.slideShowView.updatePosition(startPositionX);
     this.slideShowView.setPreviousSlide(previousSlide);
 
-    this.slideShowView.update(offsetX, data, defaultX);
+    this.slideShowView.update(offsetX);
 
 };
 

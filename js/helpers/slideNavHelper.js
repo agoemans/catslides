@@ -7,8 +7,12 @@ var SlideNavHelper = function(){
             nextIndex = currentIndex - 1;
         }
 
-        if(nextIndex === lastIndex || nextIndex < 0){
+        if(nextIndex >= lastIndex){
             nextIndex = 0;
+        }
+
+        if(nextIndex < 0){
+            nextIndex = lastIndex;
         }
 
         return nextIndex;

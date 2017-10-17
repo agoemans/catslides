@@ -34,18 +34,11 @@ SlideShowView.prototype.toggleVisibility = function(index, value){
     this.slides[index].toggleVisibility(value);
 };
 
-SlideShowView.prototype.update = function(offsetX, dir, defaultX){
-    this.previousSlide.slideOut(offsetX, dir, defaultX);
-    this.currentSlide.slideIn();
+SlideShowView.prototype.updatePosition = function(x){
+    this.currentSlide.updatePosition(x)
+};
 
-    // TweenMax.fromTo(this.currentSlide.slideImage, 0.25, { x: 200 }, { x: offsetX, ease: SlowMo.ease.config(0.1, 0.4, false)});
-    // TweenLite.to(this.currentSlide.slideImage, 0.1, { alpha: 0, ease: Expo.easeOut});
-    //todo animated this
-    // var previousSlide = this.currentSlide;
-    // previousSlide.hide(offsetX);
-    //
-    // //todo change this next, slides[currentslide.id] or something
-    //
-    // this.currentSlide = currentSlide;
-    // this.currentSlide.show(currentX);
+SlideShowView.prototype.update = function(offsetX){
+    this.previousSlide.slideOut(offsetX);
+    this.currentSlide.slideIn();
 };
