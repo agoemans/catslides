@@ -29,8 +29,11 @@ Arrow.prototype.setupClickListeners = function(onClickCallback, onClickContext){
     })
     // .on('pointerup', onButtonUp)
     // .on('pointerupoutside', onButtonUp)
-    // .on('pointerover', onButtonOver)
+    .on('pointerover', function(){
+        TweenLite.to(this, 0.4, {x: this.x - 10, ease: Elastic.easeOut.config(1, 0.3)})
+    })
         .on('pointerout', function(){
+            TweenLite.to(this, 0.4, {x: this.x + 10, ease: Elastic.easeOut.config(1, 0.3)});
             console.log('out');
         });
 };

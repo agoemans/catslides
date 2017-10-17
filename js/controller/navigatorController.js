@@ -29,7 +29,6 @@ NavigatorController.prototype.createGUI = function(){
 };
 
 NavigatorController.prototype.onClick = function(mssg){
-    console.log('NavigatorController Click');
     this.notifyHelper.sendClickEvent('slideShowController', mssg);
 };
 

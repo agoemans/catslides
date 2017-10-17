@@ -5,9 +5,13 @@ var SlideShowController = function(){
     this.slideModel = null;
     this.slideShowView = null;
 
+    this.currentSlide = null;
+
     this.slides = [];
 
     this.notifyHelper = null;
+
+    this.slideNavHelper = new SlideNavHelper();
 
     this.slideFactory = new SlideFactory();
 };
@@ -51,22 +55,29 @@ SlideShowController.prototype.show = function(){
 };
 
 SlideShowController.prototype.onClick = function(data){
-    console.log('Slide show Click');
+    console.log('Slide show Click', data);
     console.log('==========================');
-   this.slideShowView.update();
 
-    // this.slideShowView.setCurrentSlide(this.slideModel.getCurrentSlide());
+    var lastId = this.slides.length - 1;
+    var nextSlideIndex = this.slideNavHelper.getCurrent(data, this.currentSlide.id, lastId);
 
-    // var currentIndex = this.slideModel.getCurrentIndex(data);
-    // this.slideModel.setNavigatorPositions(currentIndex);
-    //
-    // var offsetX = this.slideModel.getOffsetPositionX(data);
-    // var currentPositionX = this.slideModel.getCenterPositionX(data);
-    //
-    // this.slideShowView.update(offsetX, currentPositionX, this.slideModel.getCurrentSlide());
+    var previousSlide = this.currentSlide;
+    var nextSlide = this.slides[nextSlideIndex];
+    this.setCurrentSlide(nextSlideIndex);
 
-    console.log(this.slideModel.getCurrentSlide());
-    console.log(this.slideModel.getPreviousSlide());
-    console.log(this.slideModel.getNextSlide());
+    var offsetX = (data == 'left' ? 100 : 500);
+    var defaultX = (data == 'left' ? 800 : 100);
+
+    console.log('==============================================================');
+    console.log('offsetX: ' +  offsetX, 'previousSlide.id: ' + previousSlide.id);
+    console.log('nextSlide.id: ' + nextSlide.id, 'lastId: '+ lastId, 'nextSlideIndex: ' + nextSlideIndex);
+    this.slideShowView.setCurrentSlide(nextSlide);
+    this.slideShowView.setPreviousSlide(previousSlide);
+
+    this.slideShowView.update(offsetX, data, defaultX);
+
 };
 
+SlideShowController.prototype.update = function(data){
+
+}

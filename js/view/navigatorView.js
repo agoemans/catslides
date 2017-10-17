@@ -21,6 +21,5 @@ NavigatorView.prototype.init = function(leftArrow, rightArrow, app){
 };
 
 NavigatorView.prototype.onClick = function(dir){
-    console.log('NavigatorView Click');
     this.notifyHelper.sendClickEvent('navigatorController', dir);
 };

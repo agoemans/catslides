@@ -18,7 +18,6 @@ var SlideView = function (index, x, y, name, imageUrl, textObj, links, data, app
     };
 
     this.setupNotifier();
-    console.log('obj', data);
 };
 
 SlideView.prototype.setupNotifier = function(){
@@ -32,7 +31,8 @@ SlideView.prototype.setupNotifier = function(){
 
 SlideView.prototype.toggleVisibility = function(value){
   this.slideText.visible = value;
-  this.slideImage.visible = value;
+  // this.slideImage.visible = value;
+    this.slideImage.alpha = 1;
 
     //todo move to this.interactiveBoxHelper
   for(var i = 0; i < this.interactiveBoxes.length; i++){
@@ -52,4 +52,14 @@ SlideView.prototype.show = function(x){
     this.slideText.show(x);
 
     this.interactiveBoxHelper.update(x, this.interactiveBoxes, this.slideImage);
+};
+
+SlideView.prototype.slideOut = function(offsetX, dir, defaultX){
+    console.log('------------> slide out   ', this.id);
+    this.slideImage.slideOut(offsetX, dir, defaultX);
+};
+
+SlideView.prototype.slideIn = function(offsetX, defaultX){
+    console.log('------------> slide id', this.id);
+    this.slideImage.slideIn();
 };
