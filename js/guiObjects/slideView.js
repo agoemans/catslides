@@ -57,13 +57,18 @@ SlideView.prototype.show = function(x){
 SlideView.prototype.slideOut = function(offsetX, dir, defaultX){
     console.log('------------> slide out   ', this.id);
     this.slideImage.slideOut(offsetX, dir, defaultX);
+    this.slideText.hide(offsetX);
+    console.log('+++++++++++++', this.slideText);
 };
 
 SlideView.prototype.slideIn = function(x){
     console.log('------------> slide id', this.id);
     this.slideImage.slideIn(x);
+    this.slideText.show(x);
+    console.log('+++++++++++++', this.slideText);
 };
 
 SlideView.prototype.updatePosition = function(x){
     this.slideImage.updatePosition(x);
+    this.slideText.updatePositionX(x);
 };

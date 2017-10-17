@@ -28,3 +28,7 @@ SlideText.prototype.show = function(x){
     this.position.x = x;
     this.visible = true;
 };
+
+SlideText.prototype.updatePositionX = function(x){
+    this.position.x = x;
+};

@@ -43,7 +43,6 @@ SlideImage.prototype.slideIn = function(x){
     })
 };
 
-
 SlideImage.prototype.updatePosition = function(x){
     this.position.x = x;
 };
