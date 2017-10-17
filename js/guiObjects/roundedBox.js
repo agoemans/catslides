@@ -1,11 +1,11 @@
 var RoundedBox = function(obj, parent, tint){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage('assets/images/box.png'));
 
-    var offsetX = parent.x - (parent.width * parent.anchor.x) + obj.x;
-    var offsetY = parent.y - (parent.height * parent.anchor.y) + obj.y;
+    this.offsetX = parent.x - (parent.width * parent.anchor.x) + obj.x;
+    this.offsetY = parent.y - (parent.height * parent.anchor.y) + obj.y;
 
-    this.position.x = offsetX;
-    this.position.y = offsetY;
+    this.position.x = this.offsetX;
+    this.position.y = this.offsetY;
 
     this.name = 'roundedBox';
 
@@ -16,8 +16,9 @@ var RoundedBox = function(obj, parent, tint){
     this.text = obj.text;
 
     this.notifyHelper = null;
+    this.objX = obj.x;
 
-    this.visible = false;
+    // this.visible = false;
 
     this.setupClickListeners();
 
@@ -45,7 +46,15 @@ RoundedBox.prototype.setupClickListeners = function(){
 };
 
 RoundedBox.prototype.updateBoxPosition = function(offsetX, parent){
-    var newOffsetX = parent.x - (parent.width * parent.anchor.x) + offsetX;
+    var newOffsetX = parent.x - (parent.width * parent.anchor.x) + this.objX;
 
+    console.log('origin x position ====', this.position.x);
+    console.log('updateBoxPosition ====', offsetX, newOffsetX, parent.x);
+    console.log('newOffsetX', newOffsetX);
+    console.log('parent.width', parent.width);
     this.position.x = newOffsetX;
+};
+
+RoundedBox.prototype.toggleVisiblity = function(value){
+    this.visible = value;
 };

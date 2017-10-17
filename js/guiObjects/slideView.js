@@ -1,6 +1,8 @@
 var SlideView = function (index, x, y, name, imageUrl, textObj, links, data, app) {
     this.id = index;
     this.slideText = new SlideText(textObj);
+
+    //todo add image and popupbox to Pixi.Container, fixes the position calc
     this.slideImage = new SlideImage(x, y, imageUrl);
 
     this.interactiveBoxHelper = new InteractiveBoxHelper();
@@ -55,17 +57,18 @@ SlideView.prototype.show = function(x){
 };
 
 SlideView.prototype.slideOut = function(offsetX, dir, defaultX){
-    console.log('------------> slide out   ', this.id);
     this.slideImage.slideOut(offsetX, dir, defaultX);
     this.slideText.hide(offsetX);
-    console.log('+++++++++++++', this.slideText);
+
+    this.interactiveBoxHelper.update(offsetX, this.interactiveBoxes, this.slideImage, false);
 };
 
 SlideView.prototype.slideIn = function(x){
-    console.log('------------> slide id', this.id);
     this.slideImage.slideIn(x);
     this.slideText.show(x);
-    console.log('+++++++++++++', this.slideText);
+
+    this.interactiveBoxHelper.update(x, this.interactiveBoxes, this.slideImage, true);
+
 };
 
 SlideView.prototype.updatePosition = function(x){

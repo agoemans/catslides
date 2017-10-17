@@ -8,10 +8,13 @@ var InteractiveBoxHelper = function(){
         return boxList;
     }
 
-    function updateBoxPosition(offsetX, boxArray, parent){
+    function updateBox(offsetX, boxArray, parent, isVisible){
+        console.log('++++++++++++++++++++')
+        console.log('updateBoxPosition')
         for (var i = 0; i < boxArray.length; i++){
             var box = boxArray[i];
             box.updateBoxPosition(offsetX, parent);
+            box.toggleVisiblity(isVisible);
         }
     }
 
@@ -23,8 +26,8 @@ var InteractiveBoxHelper = function(){
                 return create(boxArray, parent)
             }
         },
-        update: function(offsetX, boxArray, parent){
-            updateBoxPosition(offsetX, boxArray, parent);
+        update: function(offsetX, boxArray, parent, isVisible){
+            updateBox(offsetX, boxArray, parent, isVisible);
         }
     }
 };
