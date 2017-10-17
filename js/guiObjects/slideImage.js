@@ -36,10 +36,10 @@ SlideImage.prototype.slideOut = function(offsetX){
     })
 };
 
-SlideImage.prototype.slideIn = function(){
+SlideImage.prototype.slideIn = function(x){
     console.log('image Slide In', this.position.x);
     TweenMax.to(this, 0.35, {
-        x: 400, alpha: 1, visible: true, ease: Quad.easeOut
+        x: x, alpha: 1, visible: true, ease: Quad.easeOut
     })
 };
 

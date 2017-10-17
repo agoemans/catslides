@@ -68,6 +68,8 @@ SlideShowController.prototype.onClick = function(data){
     var offsetX = (data == 'left' ? 100 : 800);
     var startPositionX = (data == 'left' ? 800 : 100);
 
+    var targetPositionX = this.app.renderer.width / 2;
+
     console.log('==============================================================');
     console.log('offsetX: ' +  offsetX, 'previousSlide.id: ' + previousSlide.id);
     console.log('nextSlide.id: ' + nextSlide.id, 'lastId: '+ lastId, 'nextSlideIndex: ' + nextSlideIndex);
@@ -75,7 +77,7 @@ SlideShowController.prototype.onClick = function(data){
     this.slideShowView.updatePosition(startPositionX);
     this.slideShowView.setPreviousSlide(previousSlide);
 
-    this.slideShowView.update(offsetX);
+    this.slideShowView.update(targetPositionX, offsetX);
 
 };
 

@@ -38,7 +38,7 @@ SlideShowView.prototype.updatePosition = function(x){
     this.currentSlide.updatePosition(x)
 };
 
-SlideShowView.prototype.update = function(offsetX){
+SlideShowView.prototype.update = function(x, offsetX){
     this.previousSlide.slideOut(offsetX);
-    this.currentSlide.slideIn();
+    this.currentSlide.slideIn(x);
 };
