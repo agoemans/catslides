@@ -14,15 +14,15 @@
         "links": [
           {
             "position": {
-              "x": 10,
-              "y": 100
+              "x": 150,
+              "y": 50
             },
             "text": "He likes the sun"
           },
           {
             "position": {
-              "x": 150,
-              "y": 50
+              "x": 10,
+              "y": 100
             },
             "text": "He has whiskers"
           }
@@ -32,7 +32,7 @@
     {
       "imageName": "cat2",
       "imageUrl": "assets/images/cat2.jpg",
-      "text": "This is the main text",
+      "text": "This is Leroy",
       "size": {
         "w": 460,
         "h": 460
@@ -46,7 +46,7 @@
               "x": 150,
               "y": 20
             },
-            "text": "This is a test"
+            "text": "Brain wave"
           }
         ]
       }
@@ -75,7 +75,7 @@
               "x": 30,
               "y": 200
             },
-            "text": "This is not a tuxedo"
+            "text": "Not a tuxedo"
           }
         ]
       }
@@ -101,7 +101,7 @@
           },
           {
             "position": {
-              "x": 200,
+              "x": 220,
               "y": 30
             },
             "text": "Hates wallpaper"

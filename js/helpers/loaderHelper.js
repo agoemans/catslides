@@ -4,7 +4,7 @@ var LoaderHelper = (function(){
     function loadFonts() {
         window.WebFontConfig = {
             google: {
-                families: ['Snippet', 'Arvo:700italic', 'Podkova:700']
+                families: ['Snippet', 'Space Mono', 'Droid Serif']
             },
 
             active: function() {

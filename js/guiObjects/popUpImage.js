@@ -17,10 +17,10 @@ PopUpImage.prototype.constructor = PopUpImage;
 
 PopUpImage.prototype.updateImage = function(parent, value){
     this.position.x = parent.x + (parent.width * 1.5);
-    this.position.y = parent.y - (parent.height * 2);
+    this.position.y = parent.y - (parent.height * 2.2);
 
     TweenMax.to(this.scale, 0.2, {
-        x: value, y: value,
+        x: value * 1.2, y: value,
         ease: Sine.easeOut
     });
 

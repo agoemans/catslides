@@ -1,6 +1,6 @@
 var SlideText = function(txtObj){
     PIXI.Text.call(this, txtObj.txt, {
-        fontFamily: 'Snippet',
+        fontFamily: 'Droid Serif',
         fontSize: txtObj.size,
         fill: 'black',
         align: 'center'

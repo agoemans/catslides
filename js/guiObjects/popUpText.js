@@ -1,6 +1,6 @@
 var PopUpText = function(){
     PIXI.Text.call(this, 'This is filler text', {
-        fontFamily: 'Snippet',
+        fontFamily: 'Space Mono',
         fontSize: 15,
         fill: 'black',
         align: 'center'
@@ -23,6 +23,8 @@ PopUpText.prototype.show = function(txt, parent){
     this.x = parent.x;
     this.y = parent.y;
     this.text = txt;
+
+    console.log('what is text', this);
 
     TweenMax.to(this, 0.25, {
         alpha: 1,

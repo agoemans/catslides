@@ -28,14 +28,22 @@ SlideImage.prototype.show = function(x){
 };
 
 SlideImage.prototype.slideOut = function(offsetX){
-    TweenMax.to(this, 0.15, {
-        x: offsetX, alpha: 0, ease: Quad.easeOut
+    TweenMax.to(this, 0.35, {
+        x: offsetX, ease: Sine.easeOut
+    })
+
+    TweenMax.to(this, 0.2, {
+        alpha: 0, ease: Sine.easeOut
     })
 };
 
 SlideImage.prototype.slideIn = function(x){
-    TweenMax.to(this, 0.15, {
-        x: x, alpha: 1, visible: true, ease: Quad.easeIn
+    TweenMax.to(this, 0.5, {
+        x: x, ease: Quad.easeIn
+    })
+
+    TweenMax.to(this, 0.25, {
+        alpha: 1, ease: Quad.easeIn
     })
 };
 
