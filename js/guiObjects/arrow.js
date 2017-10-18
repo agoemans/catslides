@@ -11,9 +11,7 @@ var Arrow = function(imageUrl, app, dir){
     this.position.y = app.renderer.height * 0.85;
 
     this.anchor.set(0.5, 0.5);
-    // this.scale.set(0.3);
-
-}
+};
 
 Arrow.prototype = Object.create(PIXI.Sprite.prototype);
 

@@ -17,7 +17,6 @@ NavigatorView.prototype.init = function(leftArrow, rightArrow, app){
 
     this.leftArrow.setupClickListeners(this.onClick, this);
     this.rightArrow.setupClickListeners(this.onClick, this);
-
 };
 
 NavigatorView.prototype.onClick = function(dir){

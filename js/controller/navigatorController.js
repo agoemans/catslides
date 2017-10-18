@@ -2,9 +2,12 @@ var NavigatorController = function(){
     this.name = 'navigatorController';
 
     this.navigatorView = null;
-    this.leftArrow = null;
 
+    this.leftArrow = null;
     this.rightArrow = null;
+
+    this.leftArrowShadow = null;
+    this.rightArrowShadow = null;
 
     this.app = null;
 
@@ -26,6 +29,8 @@ NavigatorController.prototype.createGUI = function(){
 
     this.app.stage.addChild(this.leftArrow);
     this.app.stage.addChild(this.rightArrow);
+
+    console.log('this.app', this.app);
 };
 
 NavigatorController.prototype.onClick = function(mssg){
