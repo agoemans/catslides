@@ -1,13 +1,13 @@
 var SlideNavHelper = function(){
     function getIndex(dir, currentIndex, lastIndex){
         var nextIndex;
-        if(dir === 'left'){
+        if(dir === 'right'){
             nextIndex = currentIndex + 1;
         } else {
             nextIndex = currentIndex - 1;
         }
 
-        if(nextIndex >= lastIndex){
+        if(nextIndex > lastIndex){
             nextIndex = 0;
         }
 
