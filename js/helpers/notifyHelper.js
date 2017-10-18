@@ -10,7 +10,6 @@ var NotifyHelper = function(){
             receiver.onClick();
         },
         sendClickEvent: function(receiver, mssg){
-            console.log('navigator helper send click events');
             for (key in handlers) {
                 if (handlers[key].name === receiver) {
                     var handler = handlers[key];

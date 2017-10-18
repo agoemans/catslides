@@ -40,13 +40,13 @@ SlideView.prototype.setupNotifier = function(){
     }
 };
 
-SlideView.prototype.toggleVisibility = function(value){
-  this.slideText.visible = value;
+SlideView.prototype.toggleVisibility = function (value) {
+    this.slideText.visible = value;
     this.slideImage.alpha = 1;
 
-  for(var i = 0; i < this.interactiveBoxes.length; i++){
-      this.interactiveBoxes[i].visible = value;
-  }
+    for (var i = 0; i < this.interactiveBoxes.length; i++) {
+        this.interactiveBoxes[i].visible = value;
+    }
 };
 
 SlideView.prototype.hide = function(offsetX){

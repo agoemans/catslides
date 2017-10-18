@@ -25,8 +25,6 @@ Arrow.prototype.setupClickListeners = function(onClickCallback, onClickContext){
     this.on('pointerdown', function(){
         onClickCallback.call(onClickContext, that.dir);
     })
-    // .on('pointerup', onButtonUp)
-    // .on('pointerupoutside', onButtonUp)
     .on('pointerover', function(){
         TweenMax.to(this.scale, 0.2, {
             x: 1.3, y: 1.3,

@@ -24,14 +24,12 @@ PopUpText.prototype.show = function(txt, parent){
     this.y = parent.y;
     this.text = txt;
 
-    console.log('what is text', this);
-
     TweenMax.to(this, 0.25, {
         alpha: 1,
         ease: Quad.easeOut
     })
 };
 
-PopUpText.prototype.hide = function(txt, parent){
+PopUpText.prototype.hide = function(){
     this.alpha = 0;
 };

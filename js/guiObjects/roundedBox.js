@@ -1,4 +1,4 @@
-var RoundedBox = function(obj, parent, tint){
+var RoundedBox = function(obj, parent){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage('assets/images/box.png'));
 
     this.position.x = parent.x - (parent.width * 0.5) + obj.x;
@@ -30,8 +30,6 @@ RoundedBox.prototype.setupClickListeners = function(){
     this.on('pointerdown', function(){
         that.notifyHelper.sendClickEvent('popUpBox', that);
     })
-        // .on('pointerup', onButtonUp)
-        // .on('pointerupoutside', onButtonUp)
         .on('pointerover', function(){
             TweenMax.to(this.scale, 0.05, {
                 x: 1.5, y: 1.5, ease: Quad.easeIn

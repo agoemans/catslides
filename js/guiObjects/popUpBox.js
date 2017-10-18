@@ -1,4 +1,4 @@
-var PopupBox = function(text){
+var PopupBox = function(){
     this.name = 'popUpBox';
 
     this.popUpImage = new PopUpImage();

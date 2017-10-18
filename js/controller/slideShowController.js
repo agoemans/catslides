@@ -34,15 +34,8 @@ SlideShowController.prototype.createSlideShow = function(){
         this.slides.push(slide);
     }
 
-    //todo delete
-    console.log(this.slides);
-
     this.setCurrentSlide(0);
     this.show();
-};
-
-SlideShowController.prototype.getCurrentSlide = function(){
-    return this.currentSlide;
 };
 
 SlideShowController.prototype.setCurrentSlide = function(index){
@@ -55,9 +48,6 @@ SlideShowController.prototype.show = function(){
 };
 
 SlideShowController.prototype.onClick = function(data){
-    console.log('Slide show Click', data);
-    console.log('==========================');
-
     var lastId = this.slides.length - 1;
     var nextSlideIndex = this.slideNavHelper.getCurrent(data, this.currentSlide.id, lastId);
 
@@ -65,14 +55,11 @@ SlideShowController.prototype.onClick = function(data){
     var nextSlide = this.slides[nextSlideIndex];
     this.setCurrentSlide(nextSlideIndex);
 
-    var offsetX = (data == 'left' ? -this.app.renderer.width : this.app.renderer.width);
-    var startPositionX = (data == 'left' ? this.app.renderer.width : -this.app.renderer.width);
+    var offsetX = (data == 'right' ? -this.app.renderer.width : this.app.renderer.width);
+    var startPositionX = (data == 'right' ? this.app.renderer.width : -this.app.renderer.width);
 
     var targetPositionX = this.app.renderer.width / 2;
 
-    console.log('==============================================================');
-    console.log('offsetX: ' +  offsetX, 'previousSlide.id: ' + previousSlide.id);
-    console.log('nextSlide.id: ' + nextSlide.id, 'lastId: '+ lastId, 'nextSlideIndex: ' + nextSlideIndex);
     this.slideShowView.setCurrentSlide(nextSlide);
     this.slideShowView.updatePosition(startPositionX);
     this.slideShowView.setPreviousSlide(previousSlide);
@@ -81,6 +68,3 @@ SlideShowController.prototype.onClick = function(data){
 
 };
 
-SlideShowController.prototype.update = function(data){
-
-}

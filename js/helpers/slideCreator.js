@@ -12,7 +12,7 @@ function SlideFactory(){
             return app.renderer.height * 0.4;
         }
 
-        function getTextObj(x, text, app){
+        function getTextObj(text, app){
             return {
                 x: app.renderer.width / 2,
                 y: app.renderer.height * 0.85,
@@ -36,7 +36,7 @@ function SlideFactory(){
 
         var containerX = getPositionX(index, app);
         var containerY = getPositionY(app);
-        var textObj = getTextObj(containerX, data.text, app);
+        var textObj = getTextObj(data.text, app);
         var links = getHighlightObj(data.interactive.links);
 
         return new SlideView(index, containerX, containerY, data.imageName, data.imageUrl, textObj, links, data, app);

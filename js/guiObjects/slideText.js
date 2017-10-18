@@ -28,7 +28,3 @@ SlideText.prototype.show = function(app){
     this.position.x = app.renderer.width / 2;
     this.visible = true;
 };
-
-SlideText.prototype.updatePositionX = function(x){
-    this.position.x = x;
-};
