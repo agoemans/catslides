@@ -11,7 +11,7 @@ var PopUpText = function(){
 
     this.anchor.set(0.5, 0.5);
 
-    this.visible = false;
+    this.alpha = 0;
 
 };
 
@@ -19,11 +19,17 @@ PopUpText.prototype = Object.create(PIXI.Text.prototype);
 
 PopUpText.prototype.constructor = PopUpText;
 
-PopUpText.prototype.updateTextInfo = function(txt, parent){
+PopUpText.prototype.show = function(txt, parent){
     this.x = parent.x;
     this.y = parent.y;
-
     this.text = txt;
 
-    console.log('text', this, parent)
+    TweenMax.to(this, 0.25, {
+        alpha: 1,
+        ease: Quad.easeOut
+    })
+};
+
+PopUpText.prototype.hide = function(txt, parent){
+    this.alpha = 0;
 };
