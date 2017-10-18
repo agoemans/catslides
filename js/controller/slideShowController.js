@@ -65,10 +65,10 @@ SlideShowController.prototype.onClick = function(data){
     var nextSlide = this.slides[nextSlideIndex];
     this.setCurrentSlide(nextSlideIndex);
 
-    var offsetX = (data == 'left' ? -200 : 200);
-    var startPositionX = (data == 'left' ? 200 : -200);
+    var offsetX = (data == 'left' ? -this.app.renderer.width : this.app.renderer.width);
+    var startPositionX = (data == 'left' ? this.app.renderer.width : -this.app.renderer.width);
 
-    var targetPositionX = 0;
+    var targetPositionX = this.app.renderer.width / 2;
 
     console.log('==============================================================');
     console.log('offsetX: ' +  offsetX, 'previousSlide.id: ' + previousSlide.id);

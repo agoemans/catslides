@@ -32,7 +32,7 @@ SlideImageContainer.prototype.show = function(x){
 };
 
 SlideImageContainer.prototype.slideOut = function(offsetX){
-    console.log('>>>>>>>>>>>>>>>>>>>before slide out, that', this);
+    console.log('>>>>>>>>>>>>>>>>>>>before slide out, offset', offsetX);
     var that = this;
     TweenMax.to(this, 0.15, {
         x: offsetX, alpha: 0, ease: Quad.easeOut, onComplete: function(){
@@ -42,7 +42,7 @@ SlideImageContainer.prototype.slideOut = function(offsetX){
 };
 
 SlideImageContainer.prototype.slideIn = function(x){
-    console.log('>>>>>>>>>>>>>>>>>>>before slide in, that', this);
+    console.log('>>>>>>>>>>>>>>>>>>>before slide in, X', x);
     var that = this;
     TweenMax.to(this, 0.15, {
         x: x, alpha: 1, visible: true, ease: Quad.easeIn, onComplete: function(){

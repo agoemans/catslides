@@ -1,6 +1,7 @@
-var SlideImage = function(imageUrl){
+var SlideImage = function(name, imageUrl){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage(imageUrl));
 
+    this.slideImageName = name;
     this.position.x = 0;
     this.position.y = 0;
 

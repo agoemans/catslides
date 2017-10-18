@@ -4,7 +4,7 @@ var SlideView = function (index, containerX, containerY, name, imageUrl, textObj
 
     this.slideImageContainer = new SlideImageContainer(containerX, containerY);
     //todo add image and popupbox to Pixi.Container, fixes the position calc
-    this.slideImage = new SlideImage(imageUrl);
+    this.slideImage = new SlideImage(name, imageUrl);
 
     this.interactiveBoxHelper = new InteractiveBoxHelper();
     this.interactiveBoxes = this.interactiveBoxHelper.getBoxes(links, this.slideImage);

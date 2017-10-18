@@ -15,13 +15,13 @@
           {
             "position": {
               "x": 10,
-              "y": 10
+              "y": 100
             },
             "text": "He likes the sun"
           },
           {
             "position": {
-              "x": 30,
+              "x": 150,
               "y": 50
             },
             "text": "He has whiskers"
@@ -43,8 +43,8 @@
         "links": [
           {
             "position": {
-              "x": 50,
-              "y": 70
+              "x": 150,
+              "y": 20
             },
             "text": "This is a test"
           }
@@ -65,17 +65,17 @@
         "links": [
           {
             "position": {
-              "x": 100,
-              "y": 180
+              "x": 140,
+              "y": 20
             },
-            "text": "He likes food"
+            "text": "Not an antenna"
           },
           {
             "position": {
-              "x": 280,
-              "y": 300
+              "x": 30,
+              "y": 200
             },
-            "text": "He likes the sun"
+            "text": "This is not a tuxedo"
           }
         ]
       }
@@ -94,17 +94,17 @@
         "links": [
           {
             "position": {
-              "x": 10,
-              "y": 70
+              "x": 65,
+              "y": 200
             },
-            "text": "He likes the sun"
+            "text": "Short whisker"
           },
           {
             "position": {
-              "x": 10,
-              "y": 70
+              "x": 200,
+              "y": 30
             },
-            "text": "He has whiskers"
+            "text": "Hates wallpaper"
           }
         ]
       }

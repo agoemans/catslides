@@ -2,14 +2,14 @@ function SlideFactory(){
     this.create = function(index, data, app){
         function getPositionX(index, app) {
             if (index == 0){
-                return 0;
+                return app.renderer.width / 2;
             } else {
-                return 300;
+                return -app.renderer.width;
             }
         }
 
         function getPositionY (app) {
-            return app.renderer.height * 0.35;
+            return app.renderer.height * 0.4;
         }
 
         function getTextObj(x, text, app){

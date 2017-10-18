@@ -1,17 +1,14 @@
 var RoundedBox = function(obj, parent, tint){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage('assets/images/box.png'));
 
-    // console.log('===========================');
-    // console.log('parent.x', parent.x);
-    // console.log('parent.width', parent.width);
-    // console.log('obj.x', obj.x);
-    // console.log('parent.x - (parent.width * parent.anchor.x) + obj.x', parent.x - (parent.width * parent.anchor.x) + obj.x);
-    // console.log('===========================');
-    this.offsetX = parent.x - (parent.width * parent.anchor.x) + obj.x;
-    this.offsetY = parent.y - (parent.height * parent.anchor.y) + obj.y;
+    // this.offsetX = parent.x - (parent.width * parent.anchor.x) + obj.x;
+    // this.offsetY = parent.y - (parent.height * parent.anchor.y) + obj.y;
 
-    this.position.x = obj.x;
-    this.position.y = obj.y;
+    this.position.x = parent.x - (parent.width * 0.5) + obj.x;
+    this.position.y = parent.y - (parent.height * 0.5) + obj.y;
+
+    console.log('++++++++++++++++++++++++++++')
+    console.log('x,y', this.x, this.y, this)
 
     this.name = 'roundedBox';
 
