@@ -15,7 +15,7 @@ var NotifyHelper = function(){
             }
         },
         sendClickEvent: function(receiver, mssg){
-            //used for click events
+            //used for click events to communicate between controllers or other components
             for (key in handlers) {
                 if (handlers[key].name === receiver) {
                     var handler = handlers[key];

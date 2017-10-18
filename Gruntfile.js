@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 		uglify: {
 			dev: {
 				options: {
-					mangle: false
+					mangle: false,
+                    beautify: true
 				},
 				files: {
 		            '_build/js/assignment.js': [
@@ -54,9 +55,9 @@ module.exports = function(grunt) {
 		copy: {
 			assets: {
 				files: [
-					{expand: true, flatten: true, src: ['assets/images/**'], dest: '_build/assets/images/'},
-					{expand: true, flatten: true, src: ['assets/css/**'], dest: '_build/assets/css/'},
-					{expand: true, flatten: true, src: ['assets/data/**'], dest: '_build/assets/data/'},
+					{expand: true, flatten: true, src: ['assets/images/**'], dest: '_build/assets/images'},
+					{expand: true, flatten: true, src: ['assets/css/**'], dest: '_build/assets/css'},
+					{expand: true, flatten: true, src: ['assets/data/**'], dest: '_build/assets/data'},
 					{expand: true, flatten: true, src: ['node_modules/pixi.js/dist/pixi.min.js'], dest: '_build/js'},
 					{expand: true, flatten: true, src: ['node_modules/gsap/src/minified/TweenMax.min.js'], dest: '_build/js'},
                     {expand: true, flatten: true, src: ['html/index.html'], dest: '_build'}
