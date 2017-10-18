@@ -27,6 +27,7 @@ SlideShowController.prototype.init = function(app){
 };
 
 SlideShowController.prototype.createSlideShow = function(){
+    //init/create slide show
     var data = this.slideModel.getData();
 
     for (var i = 0; i < data.slides.length; i++){
@@ -48,6 +49,7 @@ SlideShowController.prototype.show = function(){
 };
 
 SlideShowController.prototype.onClick = function(data){
+    //when nav arrows are clicked, calculate next/previous slides, set the incoming slides' position, call slide animation
     var lastId = this.slides.length - 1;
     var nextSlideIndex = this.slideNavHelper.getCurrent(data, this.currentSlide.id, lastId);
 
@@ -65,6 +67,8 @@ SlideShowController.prototype.onClick = function(data){
     this.slideShowView.setPreviousSlide(previousSlide);
 
     this.slideShowView.update(targetPositionX, offsetX);
+
+    this.notifyHelper.onSlideEvent('navigatorController', this.currentSlide.id);
 
 };
 

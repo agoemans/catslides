@@ -43,6 +43,7 @@ module.exports = function(grunt) {
                         'js/guiObjects/popUpImage.js',
                         'js/guiObjects/roundedBox.js',
                         'js/guiObjects/slideImage.js',
+                        'js/guiObjects/slideLabelText.js',
                         'js/guiObjects/slideText.js',
                         'js/guiObjects/arrow.js',
                         'js/guiObjects/slideView.js'

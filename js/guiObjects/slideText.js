@@ -13,7 +13,7 @@ var SlideText = function(txtObj){
 
     this.visible = false;
 
-}
+};
 
 SlideText.prototype = Object.create(PIXI.Text.prototype);
 

@@ -8,13 +8,13 @@ var LoaderHelper = (function(){
             },
 
             active: function() {
-                // do something
                 loadAssets();
             }
         };
     }
 
     function loadAssets() {
+        // add all assets here
         PIXI.loader
             .add('assets/data/imageData.json')
             .add('assets/images/arrow.png')

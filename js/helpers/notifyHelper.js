@@ -5,11 +5,17 @@ var NotifyHelper = function(){
             handlers[handler.name] = handler;
             handler.notifyHelper = this;
         },
-        notify: function(receiver){
-            var handler = handlers[receiver];
-            receiver.onClick();
+        onSlideEvent: function(receiver, mssg){
+            //used for updating text etc. after event
+            for (key in handlers) {
+                if (handlers[key].name === receiver) {
+                    var handler = handlers[key];
+                    handler.onSlideComplete(mssg);
+                }
+            }
         },
         sendClickEvent: function(receiver, mssg){
+            //used for click events
             for (key in handlers) {
                 if (handlers[key].name === receiver) {
                     var handler = handlers[key];

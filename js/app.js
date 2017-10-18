@@ -11,7 +11,7 @@ var slideApp = (function () {
         }
 
         function onLoaded() {
-            console.log('onLoaded');
+            // creates PIXI app once all assets are loaded
             app = new PIXI.Application({
                 width: 800,
                 height: 600,
@@ -23,6 +23,7 @@ var slideApp = (function () {
 
             document.body.appendChild(app.view);
 
+            // in PIXI, manipulate the canvas element via app.view
             app.view.style.position = 'absolute';
             app.view.style.top = 0;
             app.view.style.bottom = 0;
@@ -37,6 +38,7 @@ var slideApp = (function () {
         }
 
         function createControllers(){
+            // initialize the slideshow and nav controllers
             slideShowController = new SlideShowController();
             slideShowController.init(app);
 
@@ -45,6 +47,7 @@ var slideApp = (function () {
         }
 
         function setupNotifier(){
+            // create notifier, assign controllers/nav that will use it
             notifier = new NotifyHelper();
             notifier.register(slideShowController);
             notifier.register(slideShowController.slideShowView);

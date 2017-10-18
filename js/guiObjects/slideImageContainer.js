@@ -1,4 +1,5 @@
 var SlideImageContainer = function(x, y){
+    //container for slide image and its highlights
     PIXI.Container.call(this);
 
     this.position.x = x;
@@ -31,5 +32,6 @@ SlideImageContainer.prototype.slideIn = function(x){
 };
 
 SlideImageContainer.prototype.updatePosition = function(x){
+    //update position of incoming slide, x value depends on left or right dir
     this.position.x = x;
 };

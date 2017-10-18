@@ -1,12 +1,10 @@
 var SlideView = function (index, containerX, containerY, name, imageUrl, textObj, links, data, app) {
     this.id = index;
 
-    this.slideText = new SlideText(textObj);
-
     this.slideImageContainer = new SlideImageContainer(containerX, containerY);
 
+    this.slideText = new SlideText(textObj);
     this.slideImage = new SlideImage(name, imageUrl);
-
     this.imageFrame = new ImageFrame();
 
     this.slideImageContainer.addChild(this.imageFrame);
@@ -32,6 +30,7 @@ var SlideView = function (index, containerX, containerY, name, imageUrl, textObj
 };
 
 SlideView.prototype.setupNotifier = function(){
+    //set up notifier (communicates between highlight and pop up)
     this.notifier = new NotifyHelper();
     this.notifier.register(this.popUpBox);
 
