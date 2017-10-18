@@ -23,7 +23,12 @@ var slideApp = (function () {
 
             document.body.appendChild(app.view);
 
-            console.log('app', app);
+            app.view.style.position = 'absolute';
+            app.view.style.top = 0;
+            app.view.style.bottom = 0;
+            app.view.style.left = 0;
+            app.view.style.right = 0;
+            app.view.style.margin = 'auto';
 
             createControllers();
             setupNotifier();
