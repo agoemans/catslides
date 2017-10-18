@@ -34,11 +34,11 @@ function SlideFactory(){
             return linkList;
         }
 
-        var x = getPositionX(index, app);
-        var y = 50;//getPositionY(app);
-        var textObj = getTextObj(x, data.text, app);
+        var containerX = getPositionX(index, app);
+        var containerY = getPositionY(app);
+        var textObj = getTextObj(containerX, data.text, app);
         var links = getHighlightObj(data.interactive.links);
 
-        return new SlideView(index, x, y, data.imageName, data.imageUrl, textObj, links, data, app);
+        return new SlideView(index, containerX, containerY, data.imageName, data.imageUrl, textObj, links, data, app);
     }
 }

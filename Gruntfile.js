@@ -25,6 +25,7 @@ module.exports = function(grunt) {
                         'js/helpers/loaderHelper.js',
                         'js/app.js',
                         'js/helpers/slideCreator.js',
+                        'js/guiObjects/slideImageContainer.js',
                         'js/helpers/notifyHelper.js',
                         'js/helpers/interactiveboxHelper.js',
                         'js/controller/slideShowController.js',

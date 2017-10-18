@@ -19,8 +19,8 @@ SlideText.prototype = Object.create(PIXI.Text.prototype);
 
 SlideText.prototype.constructor = SlideText;
 
-SlideText.prototype.hide = function(offsetX){
-    this.position.x = offsetX;
+SlideText.prototype.hide = function(app){
+    this.position.x = -app.renderer.width;
     this.visible = false;
 };
 
