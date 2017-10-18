@@ -25,6 +25,7 @@ var LoaderHelper = (function(){
             .add('assets/images/cat3.jpg')
             .add('assets/images/cat4.jpg')
             .add('assets/images/box.png')
+            .add('assets/images/circle.png')
             .add('assets/images/popUpBox.png')
             .load(loadCB);
     }

@@ -12,9 +12,9 @@ var RoundedBox = function(obj, parent, tint){
 
     this.name = 'roundedBox';
 
-    this.tint = tint;
-
-    this.scale.set(0.5);
+    // this.tint = tint;
+    //
+    // this.scale.set(0.5);
 
     this.text = obj.text;
 

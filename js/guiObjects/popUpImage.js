@@ -3,10 +3,11 @@ var PopUpImage = function(){
 
     this.position.x = 10;
     this.position.y = 10;
+    //
+    // this.width = 200;
+    // this.height = 100;
 
-    this.width = 200;
-    this.height = 100;
-
+    this.alpha = 0.8;
     this.anchor.set(0.5);
 
     this.visible = false;
