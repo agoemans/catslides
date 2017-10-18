@@ -6,9 +6,7 @@ var SlideImage = function(x, y, imageUrl){
 
     this.anchor.set(0.5, 0.5);
 
-    this.scale.set(0.7);
-
-    this.alpha = 0;
+    this.alpha = 1;
 
 };
 
@@ -29,14 +27,14 @@ SlideImage.prototype.show = function(x){
 };
 
 SlideImage.prototype.slideOut = function(offsetX){
-    TweenMax.to(this, 0.25, {
+    TweenMax.to(this, 0.15, {
         x: offsetX, alpha: 0, ease: Quad.easeOut
     })
 };
 
 SlideImage.prototype.slideIn = function(x){
-    TweenMax.to(this, 0.35, {
-        x: x, alpha: 1, visible: true, ease: Quad.easeOut
+    TweenMax.to(this, 0.15, {
+        x: x, alpha: 1, visible: true, ease: Quad.easeIn
     })
 };
 

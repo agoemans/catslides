@@ -2,9 +2,9 @@ function SlideFactory(){
     this.create = function(index, data, app){
         function getPositionX(index, app) {
             if (index == 0){
-                return app.renderer.width / 2;
+                return 0;
             } else {
-                return app.renderer.width;
+                return 300;
             }
         }
 
@@ -14,7 +14,7 @@ function SlideFactory(){
 
         function getTextObj(x, text, app){
             return {
-                x: x,
+                x: app.renderer.width / 2,
                 y: app.renderer.height * 0.85,
                 txt: text,
                 size: 35
@@ -35,7 +35,7 @@ function SlideFactory(){
         }
 
         var x = getPositionX(index, app);
-        var y = getPositionY(app);
+        var y = 50;//getPositionY(app);
         var textObj = getTextObj(x, data.text, app);
         var links = getHighlightObj(data.interactive.links);
 

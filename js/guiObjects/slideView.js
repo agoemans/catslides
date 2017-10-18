@@ -2,6 +2,7 @@ var SlideView = function (index, x, y, name, imageUrl, textObj, links, data, app
     this.id = index;
     this.slideText = new SlideText(textObj);
 
+    this.slideImageContainer = new PIXI.Container();
     //todo add image and popupbox to Pixi.Container, fixes the position calc
     this.slideImage = new SlideImage(x, y, imageUrl);
 
@@ -10,14 +11,20 @@ var SlideView = function (index, x, y, name, imageUrl, textObj, links, data, app
 
     this.popUpBox = new PopupBox();
 
+    app.stage.addChild(this.slideImageContainer);
     app.stage.addChild(this.slideText);
-    app.stage.addChild(this.slideImage);
-    app.stage.addChild(this.popUpBox.popUpImage);
-    app.stage.addChild(this.popUpBox.popUpText);
+
+    this.slideImageContainer.addChild(this.slideImage);
+
+    this.slideImageContainer.addChild(this.popUpBox.popUpImage);
+    this.slideImageContainer.addChild(this.popUpBox.popUpText);
 
     for (var i = 0; i < this.interactiveBoxes.length; i++) {
-        app.stage.addChild(this.interactiveBoxes[i]);
+        this.slideImageContainer.addChild(this.interactiveBoxes[i]);
     };
+
+    this.slideImageContainer.x = app.renderer.width / 2;
+    this.slideImageContainer.y = app.renderer.height * 0.35;
 
     this.setupNotifier();
 };
@@ -63,9 +70,9 @@ SlideView.prototype.slideOut = function(offsetX, dir, defaultX){
     this.interactiveBoxHelper.update(offsetX, this.interactiveBoxes, this.slideImage, false);
 };
 
-SlideView.prototype.slideIn = function(x){
+SlideView.prototype.slideIn = function(x, app){
     this.slideImage.slideIn(x);
-    this.slideText.show(x);
+    this.slideText.show(app);
 
     this.interactiveBoxHelper.update(x, this.interactiveBoxes, this.slideImage, true);
 
