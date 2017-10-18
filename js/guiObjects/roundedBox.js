@@ -11,7 +11,8 @@ var RoundedBox = function(obj, parent, tint){
 
     this.notifyHelper = null;
 
-    this.alpha = 0.6;
+    this.anchor.set(0.5);
+    this.alpha = 0.9;
 
     this.setupClickListeners();
 
@@ -28,13 +29,18 @@ RoundedBox.prototype.setupClickListeners = function(){
     var that = this;
     this.on('pointerdown', function(){
         that.notifyHelper.sendClickEvent('popUpBox', that);
-        // onClickCallback.call(onClickContext, this);
     })
         // .on('pointerup', onButtonUp)
         // .on('pointerupoutside', onButtonUp)
-        // .on('pointerover', onButtonOver)
+        .on('pointerover', function(){
+            TweenMax.to(this.scale, 0.05, {
+                x: 1.5, y: 1.5, ease: Quad.easeIn
+            });
+        })
         .on('pointerout', function(){
-            console.log('out');
+            TweenMax.to(this.scale, 0.05, {
+                x: 1, y: 1, ease: Quad.easeIn
+            });
         });
 };
 

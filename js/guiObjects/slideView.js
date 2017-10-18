@@ -1,5 +1,6 @@
 var SlideView = function (index, containerX, containerY, name, imageUrl, textObj, links, data, app) {
     this.id = index;
+
     this.slideText = new SlideText(textObj);
 
     this.slideImageContainer = new SlideImageContainer(containerX, containerY);
@@ -64,6 +65,7 @@ SlideView.prototype.slideOut = function(offsetX, app){
     this.slideText.hide(app);
 
     this.slideImageContainer.slideOut(offsetX);
+
 };
 
 SlideView.prototype.slideIn = function(x, app){

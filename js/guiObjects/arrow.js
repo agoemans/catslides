@@ -30,10 +30,15 @@ Arrow.prototype.setupClickListeners = function(onClickCallback, onClickContext){
     // .on('pointerup', onButtonUp)
     // .on('pointerupoutside', onButtonUp)
     .on('pointerover', function(){
-        TweenLite.to(this, 0.4, {x: this.x - 10, ease: Elastic.easeOut.config(1, 0.3)})
+        TweenMax.to(this.scale, 0.2, {
+            x: 1.3, y: 1.3,
+            ease: Sine.easeOut
+        });
     })
         .on('pointerout', function(){
-            TweenLite.to(this, 0.4, {x: this.x + 10, ease: Elastic.easeOut.config(1, 0.3)});
-            console.log('out');
+            TweenMax.to(this.scale, 0.2, {
+                x: 1, y: 1,
+                ease: Sine.easeOut
+            });
         });
 };

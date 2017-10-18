@@ -30,7 +30,7 @@ SlideImage.prototype.show = function(x){
 SlideImage.prototype.slideOut = function(offsetX){
     TweenMax.to(this, 0.35, {
         x: offsetX, ease: Sine.easeOut
-    })
+    });
 
     TweenMax.to(this, 0.2, {
         alpha: 0, ease: Sine.easeOut
@@ -40,7 +40,7 @@ SlideImage.prototype.slideOut = function(offsetX){
 SlideImage.prototype.slideIn = function(x){
     TweenMax.to(this, 0.5, {
         x: x, ease: Quad.easeIn
-    })
+    });
 
     TweenMax.to(this, 0.25, {
         alpha: 1, ease: Quad.easeIn

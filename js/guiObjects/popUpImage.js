@@ -16,8 +16,8 @@ PopUpImage.prototype = Object.create(PIXI.Sprite.prototype);
 PopUpImage.prototype.constructor = PopUpImage;
 
 PopUpImage.prototype.updateImage = function(parent, value){
-    this.position.x = parent.x + (parent.width * 1.5);
-    this.position.y = parent.y - (parent.height * 2.2);
+    this.position.x = parent.x + (parent.width * 3.5);
+    this.position.y = parent.y - (parent.height * 0.2);
 
     TweenMax.to(this.scale, 0.2, {
         x: value * 1.2, y: value,
@@ -25,7 +25,7 @@ PopUpImage.prototype.updateImage = function(parent, value){
     });
 
     TweenMax.to(this, 0.05, {
-        alpha: 0.8,
+        alpha: 0.7,
         ease: Sine.easeOut
     })
 };

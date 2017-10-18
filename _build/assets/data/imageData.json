@@ -14,15 +14,15 @@
         "links": [
           {
             "position": {
-              "x": 150,
+              "x": 160,
               "y": 50
             },
             "text": "He likes the sun"
           },
           {
             "position": {
-              "x": 10,
-              "y": 100
+              "x": 30,
+              "y": 110
             },
             "text": "He has whiskers"
           }
@@ -83,7 +83,7 @@
     {
       "imageName": "cat4",
       "imageUrl": "assets/images/cat4.jpg",
-      "text": "This is Chucky's friend",
+      "text": "Chucky's friend",
       "size": {
         "w": 460,
         "h": 460

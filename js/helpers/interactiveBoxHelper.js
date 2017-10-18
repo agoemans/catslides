@@ -9,12 +9,24 @@ var InteractiveBoxHelper = function(){
     }
 
     function updateBox(offsetX, boxArray, parent, isVisible){
-        console.log('++++++++++++++++++++')
-        console.log('updateBoxPosition')
         for (var i = 0; i < boxArray.length; i++){
             var box = boxArray[i];
             box.updateBoxPosition(offsetX, parent);
             box.toggleVisiblity(isVisible);
+        }
+    }
+
+    function startScaleTween(boxArray){
+        for (var i = 0; i < boxArray.length; i++){
+            var box = boxArray[i];
+            box.startTween();
+        }
+    }
+
+    function stopScaleTween(boxArray){
+        for (var i = 0; i < boxArray.length; i++){
+            var box = boxArray[i];
+            box.stopTween();
         }
     }
 
@@ -28,6 +40,12 @@ var InteractiveBoxHelper = function(){
         },
         update: function(offsetX, boxArray, parent, isVisible){
             updateBox(offsetX, boxArray, parent, isVisible);
+        },
+        startTween: function(boxArray){
+            startScaleTween(boxArray);
+        },
+        stopTween: function(boxArray){
+            stopScaleTween(boxArray);
         }
     }
 };

@@ -18,7 +18,7 @@ var slideApp = (function () {
                 resolution: 1,
                 antialias: true,
                 forceCanvas: true,
-                backgroundColor:0x4bb1ff
+                backgroundColor:0xffffff
             });
 
             document.body.appendChild(app.view);
