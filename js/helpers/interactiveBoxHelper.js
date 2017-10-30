@@ -2,7 +2,7 @@ var InteractiveBoxHelper = function(){
     function create(boxArray, parent){
         var boxList = [];
         for (var i = 0; i < boxArray.length; i++){
-            boxList.push(new RoundedBox(boxArray[i], parent, 0xFFDAFF));
+            boxList.push(new RoundedBox(boxArray[i], i, parent));
         }
 
         return boxList;

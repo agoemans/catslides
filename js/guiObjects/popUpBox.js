@@ -8,24 +8,34 @@ var PopupBox = function(){
     this.notifyHelper = null;
 
     this.visible = false;
+
+    this.boxId = null;
 };
 
 PopupBox.prototype.onClick = function(parent){
-    this.visible = !this.visible;
-
-    if(this.visible){
+    if(parent.id != this.boxId && this.visible){
+        this.hide();
         this.show(parent);
     } else {
-        this.hide(parent);
+        if (!this.visible) {
+            this.show(parent);
+        } else {
+            this.hide();
+        }
     }
+
 };
 
 PopupBox.prototype.show = function(parent){
     this.popUpImage.updateImage(parent, 1);
     this.popUpText.show(parent.text, this.popUpImage);
+    this.boxId = parent.id;
+    this.visible = true;
 };
 
 PopupBox.prototype.hide = function(){
     this.popUpImage.hide();
     this.popUpText.hide();
+    this.boxId = null;
+    this.visible = false;
 };

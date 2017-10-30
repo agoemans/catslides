@@ -1,8 +1,10 @@
-var RoundedBox = function(obj, parent){
+var RoundedBox = function(obj, id, parent){
     PIXI.Sprite.call(this, PIXI.Texture.fromImage('assets/images/box.png'));
 
     this.position.x = parent.x - (parent.width * 0.5) + obj.x;
     this.position.y = parent.y - (parent.height * 0.5) + obj.y;
+
+    this.id = id;
 
     this.originalX = obj.x;
     this.name = 'roundedBox';

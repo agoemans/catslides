@@ -33,9 +33,6 @@ NavigatorController.prototype.createGUI = function(){
     this.app.stage.addChild(this.rightArrow);
 
     this.app.stage.addChild(this.slideLabel);
-
-    console.log(this.slideLabel);
-    console.log(this.app.stage);
 };
 
 NavigatorController.prototype.onClick = function(mssg){

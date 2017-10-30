@@ -60,11 +60,16 @@ SlideView.prototype.show = function(x){
     this.slideImageContainer.show(x);
 };
 
+SlideView.prototype.hidePopUp = function(){
+    if(this.popUpBox.visible){
+        this.popUpBox.hide();
+    }
+};
+
+
 SlideView.prototype.slideOut = function(offsetX, app){
     this.slideText.hide(app);
-
     this.slideImageContainer.slideOut(offsetX);
-
 };
 
 SlideView.prototype.slideIn = function(x, app){

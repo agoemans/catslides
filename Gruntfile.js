@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['js/**/*.js', 'html/*'],
-                tasks: ['clean:build', 'uglify:dev', 'copy',]
+                tasks: ['clean:build', 'uglify:dev', 'copy']
 			}
 		},
 		uglify: {

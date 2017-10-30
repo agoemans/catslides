@@ -39,6 +39,7 @@ SlideShowView.prototype.updatePosition = function(x){
 };
 
 SlideShowView.prototype.update = function(x, offsetX){
+    this.previousSlide.hidePopUp();
     this.previousSlide.slideOut(offsetX, this.app);
     this.currentSlide.slideIn(x, this.app);
 };

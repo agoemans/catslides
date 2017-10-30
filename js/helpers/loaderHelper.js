@@ -17,7 +17,6 @@ var LoaderHelper = (function(){
         // add all assets here
         PIXI.loader
             .add('assets/data/imageData.json')
-            .add('assets/images/arrow.png')
             .add('assets/images/leftArrow.png')
             .add('assets/images/rightArrow.png')
             .add('assets/images/cat1.jpg')
